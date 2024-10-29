@@ -18,21 +18,43 @@
   display: flex;
   gap: 55px;
   position: absolute;
-  left: 145px;
+  left: 185px;
 }
 
 .nav-links div {
   color: white;
-  font-size: 14px;
+  font-family: 'MO';
+  font-size: 16px;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
   transition: color 0.3s;
+  position: relative; /* Necessary for positioning the underline */
 }
 
 .nav-links div:hover {
-  color: #ccc; /* Lighter color on hover */
+  color: #DFE6D0; /* Lighter color on hover */
 }
+
+/* Underline effect */
+.nav-links div::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Position the underline just below the text */
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #DFE6D0; /* Underline color */
+  transform: scaleX(0); /* Start with no underline */
+  transform-origin: right; /* Start animation from the right */
+  transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.nav-links div:hover::after {
+  transform: scaleX(1); /* Expand underline on hover */
+  transform-origin: left; /* Animate from left to right */
+}
+
 
 .buttons-container {
   display: flex;
@@ -45,7 +67,7 @@
   padding: 15px 30px;
   border-radius: 30px;
   font-family: 'MO', sans-serif !important; 
-  font-weight: 200;
+  font-weight: 400;
   font-size: 16px;
   cursor: pointer;
   text-align: center;

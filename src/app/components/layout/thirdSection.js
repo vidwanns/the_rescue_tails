@@ -1,15 +1,27 @@
-"use client"
+"use client";
 import React from "react";
 import "../../styles/component/thirdSection/thirdSection.css";
 import Lottie from "lottie-react";
-import pet from "../../../../public/Blue.json";
+import pet from "../../../../public/full-Final.json";
 const ThirdSection = () => {
   return (
     <section className="third-section">
       {/* SVG Icons */}
-      <img src="/images/ThirdSection/whitePawRight.svg" alt="Paw Icon" className="paw-icon-top-right" />
-      <img src="/images/ThirdSection/white-bone.svg" alt="Bone Icon" className="bone-icon-left-center" />
-      <img src="/images/ThirdSection/pawLeftOrg.svg" alt="Paw Icon" className="paw-icon-below-bone" />
+      <img
+        src="/images/ThirdSection/whitePawRight.svg"
+        alt="Paw Icon"
+        className="paw-icon-top-right"
+      />
+      <img
+        src="/images/ThirdSection/white-bone.svg"
+        alt="Bone Icon"
+        className="bone-icon-left-center"
+      />
+      <img
+        src="/images/ThirdSection/pawLeftOrg.svg"
+        alt="Paw Icon"
+        className="paw-icon-below-bone"
+      />
 
       <div className="content-container">
         <div className="image-container">
@@ -32,19 +44,35 @@ const ThirdSection = () => {
 
           <div className="button-group">
             <button className="help-button adopt">
-              <img src="/images/ThirdSection/fox1.svg" alt="Dog Icon" className="button-icon" />
+              <img
+                src="/images/ThirdSection/fox1.svg"
+                alt="Dog Icon"
+                className="button-icon"
+              />
               Adopt
             </button>
             <button className="help-button foster">
-              <img src="/images/ThirdSection/home2.svg" alt="House Icon" className="button-icon" />
+              <img
+                src="/images/ThirdSection/home2.svg"
+                alt="House Icon"
+                className="button-icon"
+              />
               Foster
             </button>
             <button className="help-button volunteer">
-              <img src="/images/ThirdSection/volunteer_icon3.jpg" alt="Volunteer Icon" className="button-icon" />
+              <img
+                src="/images/ThirdSection/volunteer_icon3.jpg"
+                alt="Volunteer Icon"
+                className="button-icon"
+              />
               Volunteer
             </button>
             <button className="help-button donate">
-              <img src="/images/ThirdSection/hand4.svg" alt="Donate Icon" className="button-icon" />
+              <img
+                src="/images/ThirdSection/hand4.svg"
+                alt="Donate Icon"
+                className="button-icon"
+              />
               Donate
             </button>
           </div>
@@ -58,7 +86,12 @@ const ThirdSection = () => {
           </p>
 
           <a href="#adoptables" className="adoptables-link">
-            Check Adoptables &rarr;
+            Check Adoptables
+            <img
+              src="/images/ThirdSection/adoptables_arrow.svg"
+              alt="Arrow Icon"
+              className="arrow-icon"
+            />
           </a>
         </div>
       </div>
@@ -72,13 +105,17 @@ const ThirdSection = () => {
         />
         <div className="new-container">
           <h3 className="donation-title">
-            See How Your Donation <span className="highlight">Transforms</span> Lives!
+            See How Your Donation <span className="highlight">Transforms</span>{" "}
+            Lives!
           </h3>
           <div className="donation-journey">
-            <Lottie animationData={pet} loop={true} style={{ position: "absolute", left: "-100px" }} />
+            <Lottie
+              animationData={pet}
+              loop={true}
+              style={{ position: "absolute", left: "-100px" }}
+            />
           </div>
         </div>
-
       </div>
     </section>
   );

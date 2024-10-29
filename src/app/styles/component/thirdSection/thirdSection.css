@@ -126,11 +126,19 @@
 }
 
 .adoptables-link {
-  color: #F4B948;
-  font-family: 'MO';
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Adjust spacing between text and icon */
+  color: #F4B948; /* Adjust text color */
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.adoptables-link .arrow-icon {
+  width: 16px; /* Adjust size of the icon */
+  height: auto;
 }
 
 .adoptables-link:hover {
