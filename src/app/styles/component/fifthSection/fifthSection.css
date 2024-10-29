@@ -110,22 +110,22 @@
 } */
 
 .top-left-2 {
-    top: 30%;
-    left: 10%;
+    top: 22%;
+    left: 4%;
     background-size: cover;
     scale: 1.5;
 }
 
 .top-right {
-    top: 10%;
-    right: 10%;
+    top: 5%;
+    right: 5%;
     background-size: cover;
     scale: 1.5;
 }
 
 .bottom-right {
-    bottom: 14%;
-    right: 6%;
+    bottom: 24%;
+    right: 4%;
     background-size: cover;
     scale: 1.5;
 }
