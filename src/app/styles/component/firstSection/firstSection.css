@@ -1,0 +1,167 @@
+.first-section {
+    position: relative;
+    text-align: center; /* This centers the text inside the section */
+    padding: 55px;
+    background-color: #f8f4ef;
+}
+
+.first-section-title {
+    font-family: 'HV', sans-serif;
+    font-weight: 600;
+    font-size:120px;   
+    color: #000;
+    margin-bottom: 20px;
+    margin: 0 auto 40px;
+    line-height: 105%;
+    width: 1130px;
+    text-align: center;
+    letter-spacing: 0px;
+}
+
+.first-section-description {
+    font-family: 'HV', sans-serif;
+    font-size: 29px;
+    color: #3F1063;
+    margin: 0 auto 40px; 
+    width: 812px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-align: center; 
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pet-image {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.donate-section {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center; /* Center the donate button */
+    align-items: flex-start; /* Align items at the start of the container */
+    gap: 20px; /* Space between left section and button */
+}
+
+.left-align {
+    display: flex;
+    flex-direction: column; /* Stack the text and icon vertically */
+    align-items: flex-start; /* Align items to the left */
+    gap: 5px; /* Space between the text and the arrow */
+}
+
+.curved-arrow-icon-2 {
+    width: 30px; /* Adjust width if needed */
+    height: auto;
+    transform: rotate(10deg);
+    scale: 1.5;
+    margin-left: 30px;
+}
+
+
+.donate-text {
+    font-size: 27px;
+    font-family: 'FT', sans-serif;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 0px;
+    margin: 0;
+    transform: matrix(0.98, 0.17, -0.17, 0.98, 0, 0);}
+
+.donate-button-wrapper {
+    display: inline-block;
+    padding: 6px 12px;
+    position: relative;
+    border-radius: 60px; /* Matches button border radius */
+    border: 10px dashed #EE8370;
+    border-style: dotted; /* Set the border style to dotted */
+    border-width: 2px;
+    border-color: #ff7e42;
+    box-sizing: border-box;
+}
+
+
+.donate-button {
+    padding: 25px 60px; /* Inner padding for the button */
+    background-color: #ff7e42; /* Original background color */
+    color: white;
+    border: none; /* Remove the default border */
+    border-radius: 60px; /* Keep the original border radius */
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+.donate-button:hover {
+    background-color: transparent; /* Change to transparent on hover */
+    color: #ff7e42; /* Change text color on hover */
+}
+
+
+/* SVG Icon Styles */
+.paw-icon {
+    position: absolute;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.paw-icon.left {
+    left: 5%;
+    top: 24%;
+}
+
+.paw-icon.right {
+    right: 6%;
+    top: 24%;
+    scale: .8;
+}
+
+.bone-icon {
+    position: absolute;
+    top: 36%;
+    left: 16%;
+    scale: .9;
+}
+
+/* Right Side Curved Arrow and Text */
+.curved-arrow-section {
+    position: absolute;
+    top: 30%; /* Keep the section's general position */
+    right: 16%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Targeting only the arrow */
+.curved-arrow-icon {
+    width: 50px;
+    height: 50px;
+    scale: 3;
+    position: relative; /* Use relative positioning */
+    top: 120px; /* Move the arrow down by 20px */
+    left: 20px;
+}
+
+/* Targeting only the text */
+.curved-arrow-text {
+    font-size: 26px;
+    color: #4d4062;
+    width: 120px;
+    position: relative; /* Independent of the arrow */
+    top: 30px; /* Ensure it stays at the original position */
+    left: 80px;
+    transform: rotate(40deg);
+    font-family: 'FT', sans-serif;
+    line-height: 85%;
+    font-weight: 500;
+
+}

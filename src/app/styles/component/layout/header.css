@@ -1,0 +1,83 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: #3F1063;
+  position: relative;
+}
+
+.header_logo {
+  display: flex;
+  align-items: center;
+  height: 100px;
+
+}
+
+.nav-links {
+  display: flex;
+  gap: 55px;
+  position: absolute;
+  left: 145px;
+}
+
+.nav-links div {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links div:hover {
+  color: #ccc; /* Lighter color on hover */
+}
+
+.buttons-container {
+  display: flex;
+  gap: 25px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;  /* Align text and icon */
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-family: 'MO', sans-serif !important; 
+  font-weight: 200;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.button.contact {
+  background-color: #DFE6D0;
+  color: #3A3935;
+  font-weight : lighter;
+
+}
+
+.button.donate {
+  font-weight : 100 !important;
+  letter-spacing: .5px;
+  background-color: #EE7331;
+  color: white;
+  display: flex;
+  align-items: center;
+  /* transition: background-color 0.3s ease, transform 0.3s ease; */
+}
+
+.button.donate:hover {
+  background-color: #d9611f; /* Slightly darker background on hover */
+}
+
+.arrow-icon {
+  width: 11px; /* Adjust the size of the arrow */
+  height: auto;
+  display: inline-block;
+  margin-left: 9px; /* Add a little space between the text and the icon */
+  transition: transform 0.3s ease;
+}
+

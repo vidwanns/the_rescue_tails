@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="338.721" height="262.664" viewBox="0 0 338.721 262.664">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_69" data-name="Rectangle 69" width="312.918" height="262.664" transform="translate(25.768)" fill="none" stroke="#e68a3c" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e16d38"/>
+      <stop offset="1" stop-color="#e78f3d"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_56" data-name="Group 56" transform="translate(-21714.965 -1220)">
+    <g id="Group_55" data-name="Group 55" transform="translate(21715 1220)" style="isolation: isolate">
+      <g id="Group_54" data-name="Group 54">
+        <g id="Group_53" data-name="Group 53" clip-path="url(#clip-path)">
+          <path id="Path_67" data-name="Path 67" d="M78.577.829s-92.2,139.1-29.409,193.942S269.445,182.34,307.492,81.108C352-37.323,42.014,1.624,337.7,261.538" fill="none" stroke="#e68a3c" stroke-miterlimit="10" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+    <path id="Path_68" data-name="Path 68" d="M39.806,111.37c11.229,15.979,16.746,31.452,12.322,34.561s-17.113-7.324-28.342-23.3S7.04,91.176,11.464,88.067,28.577,95.391,39.806,111.37Z" transform="translate(21715 1220)" fill="url(#linear-gradient)"/>
+    <path id="Path_69" data-name="Path 69" d="M24.993,108.133C41.242,97.3,56.846,92.162,59.846,96.661S52.1,113.59,35.855,124.424,4,140.4,1,135.9,8.744,118.967,24.993,108.133Z" transform="translate(21715 1220)" fill="#e5843b" stroke="#e68a3c" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

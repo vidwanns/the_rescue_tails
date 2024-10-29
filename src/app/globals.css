@@ -1,0 +1,106 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'HV'; /* Helvetica Regular */
+  src: url('/fonts/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FT'; /* Helvetica Regular */
+  src: url('/fonts/FilmotypeLaCrosse.woff.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'HV-BLD'; /* Helvetica Bold */
+  src: url('/fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Bold Oblique */
+@font-face {
+  font-family: 'HV-BLD-OBL'; /* Helvetica Bold Oblique */
+  src: url('/fonts/Helvetica-BoldOblique.ttf') format('truetype');
+  font-weight: bold;
+  font-style: oblique;
+}
+
+/* Light */
+@font-face {
+  font-family: 'HV-LT'; /* Helvetica Light */
+  src: url('/fonts/helvetica-light-587ebe5a59211.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Oblique */
+@font-face {
+  font-family: 'HV-OBL'; /* Helvetica Oblique */
+  src: url('/fonts/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: oblique;
+}
+@font-face {
+  font-family: 'MO'; /* Helvetica Oblique */
+  src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: oblique;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'HV', sans-serif; /* Regular */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+}
+.maincontainer {
+  max-width: 1794px;
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100% !important;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

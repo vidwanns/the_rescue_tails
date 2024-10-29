@@ -1,0 +1,238 @@
+.third-section {
+  background: linear-gradient(135deg, #2A6259 0%, #367A62 50%, #61D287 100%);
+  padding: 50px 20px;
+  position: relative;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.help-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.help-button:hover {
+  background-color: #7a4f9a;
+  color: white;
+}
+
+.button-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.help-button:hover .button-icon {
+  opacity: 1;
+}
+
+/* SVG Icon Styling */
+.paw-icon-top-right,
+.bone-icon-left-center,
+.paw-icon-below-bone {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.paw-icon-top-right {
+  top: 12%;
+  right: 14%;
+}
+
+.bone-icon-left-center {
+  top: 45%;
+  left: 20%;
+}
+
+.paw-icon-below-bone {
+  top: 60%;
+  left: 2%;
+  transform: rotate(70deg);
+  scale: 0.8;
+}
+
+/* Text and Layout */
+.content-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.image-container {
+  flex: 1;
+}
+
+.dog-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+
+.text-container {
+  flex: 2;
+  padding: 0 20px;
+}
+
+.third-section-title {
+  font-size: 66px;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.third-section-description {
+  font-size: 24px;
+  color: #fff;
+  margin: 40px 40px 40px 0;
+  padding-right: 34%;
+  width: 100%;
+  text-align: start;
+  letter-spacing: 0.5px;
+}
+
+.adoption-info {
+  font-size: 24px;
+  color: #fff;
+  margin: 40px 40px 40px 0;
+  padding-right: 34%;
+  width: 100%;
+  text-align: start;
+  letter-spacing: 0.5px;
+}
+
+.adoptables-link {
+  color: #f0b01b;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.adoptables-link:hover {
+  color: #EE7331;
+}
+
+.donation-graphic-container {
+  margin-top: 80px;
+  text-align: center;
+  position: relative; /* Allow positioning relative to the container */
+}
+
+/* Dog Icon Positioned at the Top-Right of the Donation Graphic */
+.dog-icon-above-graphic {
+  position: absolute;
+  top: -54.5%; /* Adjust this value to move it vertically */
+  right: 14%; /* Adjust this value to move it horizontally */
+  width: 100px;
+  height: auto;
+  z-index: 2; /* Ensure it appears above other elements */
+  scale: 2.6;
+}
+
+.donation-title {
+  font-size: 24px;
+  color: #494949;
+}
+
+.highlight {
+  color: #f27623;
+  font-weight: bold;
+}
+
+/* New Container Styling */
+.new-container {
+  background-color: #222;
+  padding: 30px;
+  border-radius: 10px;
+  width: 1300px;
+  height: 350px;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.donation-title {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: #f27623;
+  font-weight: bold;
+}
+
+/* Journey Graphic Styling */
+.donation-journey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.journey-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Icon-specific Styles */
+.donation-amount::before {
+  content: "💵"; /* Replace with SVG or image if available */
+  font-size: 24px;
+}
+
+.donation-bags::before {
+  content: "🛍️";
+  font-size: 24px;
+}
+
+.donation-foods::before {
+  content: "🍲";
+  font-size: 24px;
+}
+
+.donation-happy-furry::before {
+  content: "🐶";
+  font-size: 24px;
+}
+
+/* Connecting Lines */
+.journey-line {
+  width: 100px;
+  height: 2px;
+  background-color: #61D287;
+  border-top: 2px dashed #61D287;
+}

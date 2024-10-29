@@ -1,0 +1,226 @@
+.second-section {
+    background-color: #D8F4F6;
+    /* padding: 0 0 30px 0; */
+    text-align: center;
+    position: relative;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 40px;
+    background-color: #2b534a;
+    padding: 20px;
+    color: #fff;
+    height: 350px;
+    align-items: center;
+}
+
+.stat-box {
+    width: 260px;
+    height: 260px;
+    position: relative;
+    text-align: center;
+    padding: 60px 20px 20px 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    color: white; /* Default color for text */
+}
+
+.stat-box:hover {
+    transform: scale(1.05);
+}
+
+.stat-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.stat-box:hover::before {
+    opacity: 1;
+}
+
+.heart-icon {
+    scale: 1.5;
+    margin-bottom: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: rotate(-10deg);
+}
+
+.stat-box:hover .heart-icon {
+    opacity: 1; /* Heart icon appears on hover */
+
+}
+
+.stat-number, .stat-text {
+    color: white; /* Default white color */
+    transition: color 0.3s ease;
+}
+
+.stat-box:hover .stat-number, 
+.stat-box:hover .stat-text {
+    color: #6c9f56; /* Green color on hover */
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.stat-text {
+    font-family: 'Helvetica';
+    font-weight: 100;
+    font-size: 20px;
+    padding-top: 10px;
+    width: 160px;
+    align-items: center;
+    margin: auto;
+}
+
+.main-content {
+    margin-top: 50px;
+    height: 700px;
+}
+
+.main-title {
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+    color: #2b534a;
+}
+
+.large-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    color: #2b534a;
+    width: 100%;
+}
+
+.large-text span {
+    font-size: 120px;
+}
+
+.image-box {
+    width: 315px;
+    height: 124px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+.description-text {
+    font-size: 1.1rem;
+    color: #2b534a;
+    margin: 30px auto;
+    max-width: 680px;
+}
+
+.cta-button {
+    padding: 10px 30px;
+    background-color: #ff7e42;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e6692b;
+}
+
+.curved-decoration {
+    position: absolute;
+    top: 32%;
+    left: -1%;
+    text-align: center;
+    scale: 1;
+}
+
+.curved-decoration img {
+    max-width: 100%;
+}
+
+.curved-decoration-2 {
+    position: absolute;
+    top: 76%;
+    left: 80%;
+    text-align: center;
+    scale: 1;
+    transform: rotate(180deg);
+}
+
+/* Heart SVG positioning */
+.svg-heart {
+    position: absolute;
+    top: 54%;
+    right: 10%;
+    scale: 1.5;
+}
+
+.svg-heart img {
+    width: 40px;
+    height: auto;    
+}
+
+/* Paw SVG positioning for top-left */
+.svg-paw-top-left {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    scale: 1.5;
+    transform: rotate(-40deg);
+}
+
+.svg-paw-top-left img {
+    width: 70px;
+    height: auto;
+}
+
+/* Paw SVG positioning for bottom-left */
+.svg-paw-bottom-left {
+    position: absolute;
+    bottom: 10%;
+    left: 7%;
+}
+
+.svg-paw-bottom-left img {
+    width: 40px;
+    height: auto;
+}
+
+/* Paw SVG positioning for top-right */
+.svg-paw-top-right {
+    position: absolute;
+    top: 23%;
+    right: 5%;
+    scale: 1.5;
+}
+
+.svg-paw-top-right img {
+    width: 70px;
+    height: auto;
+}

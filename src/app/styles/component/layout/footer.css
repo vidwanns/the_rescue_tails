@@ -1,0 +1,131 @@
+/* Main Footer Container */
+.footer {
+    background-color: #102624;
+    padding: 0px 20px 20px 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 600px;
+}
+
+.outer-container-footer {
+    background-color: #214943; 
+    padding-top: 150px;
+    border-radius: 0px 0px 0 0;
+    margin: 0 auto;
+    position: relative;
+    width: 1600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Content Wrapper */
+.inner-container-footer {
+    background-color: #102624;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns content to the top */
+    width: 1480px; 
+    height: 400px;
+    position: relative;
+}
+
+/* Logo at the start of the container */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-right: 15px;
+}
+
+/* Text in the Bottom Left */
+.text-left-corner {
+    position: absolute;
+    bottom: 40px; /* Adjusts the distance from the bottom */
+    left: 30px;  /* Adjusts the distance from the left */
+    color: #E7E7E7;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.2;
+    max-width: 600px; /* Control text wrapping */
+}
+
+
+/* Container for Footer Links and Contact */
+.text-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Align text elements to the right */
+    align-items: flex-start; /* Align links and contact to the top */
+    width: 100%;
+    position: absolute;
+    top: 0; /* Move the text-wrapper to the top of the inner container */
+    right: 0;
+    padding-top: 30px; /* Add padding to the top to avoid touching the edge */
+    padding-right :100px;
+}
+
+/* Footer Links Section */
+.footer-links {
+    display: flex;
+    gap: 50px;
+    margin-right: 60px; /* Add space between links and contact */
+}
+
+.links-column {
+    list-style: none;
+    font-size: .9rem;
+    color: #E7E7E7;
+}
+
+.links-column li {
+    margin-bottom: 10px;
+}
+
+/* Vertical Divider Line */
+.vertical-divider {
+    width: 2px;
+    height: 100px; /* Adjust the height based on your design */
+    background-color:  #214943;
+    margin-right: 60px; /* Space between the links and contact */
+}
+
+
+/* Footer Contact Information at the Top Right */
+.footer-contact {
+    font-size: .9rem;
+    line-height: 1.9;
+    text-align: left; /* Right-align the contact info */
+    margin-top: -6px;
+}
+
+/* Footer Donate Button Section */
+.footer-donate {
+    margin-top: 200px; /* Keep some space between the contact info and the donate button */
+    margin-left: -70px;
+    display: flex;
+    justify-content: flex-end; /* Align donate button to the right */
+    width: 100%;
+}
+
+.donate-btn {
+    background-color: #EB7231;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    width: 220px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donate-btn .arrow {
+    margin-left: 10px;
+    font-size: 1.4rem;
+}

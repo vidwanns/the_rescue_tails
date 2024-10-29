@@ -1,0 +1,202 @@
+.fourth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #204b46;
+  position: relative;
+  height: 1075px;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+.vertical-text {
+  position: absolute;
+  left: 6%;
+  bottom: -10%;
+  margin: auto;
+  transform: rotate(-90deg) translateY(-50%);
+  transform-origin: left top;
+  font-size: 8rem;
+  font-family: Arial, sans-serif;
+  letter-spacing: 2px;
+  z-index: 2;
+  
+  /* Two-color gradient */
+  background: linear-gradient(180deg, #DAE8C6, #A9D887);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.content-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.green-blob {
+  position: absolute;
+  width: 672px;
+  height: 461px;
+  z-index: 1;
+  top: 22%;
+}
+
+.animal-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  top: -150px;
+  z-index: 2;
+  width: 100%;
+  height: 200px;
+}
+
+.white-cat {
+  position: relative;
+  right: -90px;
+  top: 46%;
+  width: 260px;
+  height: auto;
+}
+
+.brown-dog {
+  position: relative;
+  bottom: 50%;
+  width: 272px;
+  height: auto;
+  right: -20px;
+}
+
+.black-dog {
+  position: relative;
+  right: -10px;
+  bottom: 95%;
+  width: 383px;
+  height: auto;
+}
+
+.black-cat {
+  position: relative;
+  left: -120px;
+  top: 80%;
+  width: 240px;
+  height: auto;
+}
+
+.text-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  top: 80%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.text-content h1 {
+  font-family: system-ui;
+  font-size: 68px;
+  color: #000;
+  margin-bottom: 20px;
+  width: 430px;
+}
+
+.text-content p {
+  font-family: 'HV';
+  font-size: 21px;
+  font-weight: bold;
+  color: #000;
+}
+
+.button-container {
+  z-index: 3;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 260px; /* Adjust this to place it below the green blob */
+}
+
+.meet-furry-button {
+  width: 290px;
+  height: 73px;
+  background-color: #b2f385;
+  color: #000;
+  border: none;
+  padding-left: 40px;
+  border-radius: 14px;
+  font-family: 'HV';
+  font-size: 21px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 38px; /* Space between text and arrow */
+}
+
+.meet-furry-button .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* White box around the arrow */
+  width: 51px;
+  height: 51px;
+  border-radius: 30%;
+}
+
+.meet-furry-button .arrow img {
+  width: 16px;
+  height: 16px;
+}
+
+/* SVG Icon Styles */
+.top-right-icon {
+  position: absolute;
+  top: 10%; 
+  right: 10%; 
+  width: 50px; 
+  height: auto;
+  z-index: 3;
+}
+
+.bottom-right-icon {
+  position: absolute;
+  bottom: 16%; /* Adjust the position as needed */
+  right: 10%; /* Adjust the position as needed */
+  width: 60px; /* Set the width as needed */
+  height: auto;
+  z-index: 3;
+  scale: 5;
+}
+
+.top-left-icon {
+  position: relative;
+  top: 15%; 
+  right: 7%; 
+  width: 50px; 
+  height: auto;
+  z-index: 3;
+  scale: 1.8;
+  transform: rotate(20deg);
+
+}
+
+.bottom-left-icon {
+  position: relative;
+  top: 42%; 
+  right: 16%; 
+  width: 50px; 
+  height: auto;
+  z-index: 3;
+  scale: 1;
+  transform: rotate(60deg);
+
+}
