@@ -2,7 +2,7 @@
 import React from "react";
 import "../../styles/component/thirdSection/thirdSection.css";
 import Lottie from "lottie-react";
-import pet from "../../../../public/full-Final.json";
+import pet from "../../../../public/jai_ho.json";
 const ThirdSection = () => {
   return (
     <section className="third-section">

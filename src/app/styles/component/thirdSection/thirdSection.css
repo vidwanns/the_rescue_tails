@@ -225,7 +225,7 @@
 /* Dog Icon Positioned at the Top-Right of the Donation Graphic */
 .dog-icon-above-graphic {
   position: absolute;
-  top: -54.5%; /* Adjust this value to move it vertically */
+  top: -51.5%; /* Adjust this value to move it vertically */
   right: 14%; /* Adjust this value to move it horizontally */
   width: 100px;
   height: auto;
@@ -245,11 +245,11 @@
 
 /* New Container Styling */
 .new-container {
-  background-color: #222;
+  background-color: #DFE6D0;
   padding: 30px;
   border-radius: 10px;
-  width: 1300px;
-  height: 350px;
+  width: 1400px;
+  height: 370px;
   margin: auto;
   text-align: center;
   color: white;
