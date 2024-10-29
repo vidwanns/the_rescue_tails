@@ -139,18 +139,26 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 38px; /* Space between text and arrow */
+  gap: 34px; /* Space between text and arrow */
 }
 
+/* Hover animation for button */
+.meet-furry-button:hover .arrow {
+  transform: translateX(10px); /* Slide arrow to the right */
+}
+
+/* Smooth transition for the arrow */
 .meet-furry-button .arrow {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white; /* White box around the arrow */
+  background-color: white;
   width: 51px;
   height: 51px;
   border-radius: 30%;
+  transition: transform 0.3s ease; /* Smooth transition */
 }
+
 
 .meet-furry-button .arrow img {
   width: 16px;

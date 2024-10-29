@@ -87,11 +87,13 @@ const ThirdSection = () => {
 
           <a href="#adoptables" className="adoptables-link">
             Check Adoptables
-            <img
+            <div class="arrowCta"></div>
+
+            {/* <img
               src="/images/ThirdSection/adoptables_arrow.svg"
               alt="Arrow Icon"
               className="arrow-icon"
-            />
+            /> */}
           </a>
         </div>
       </div>
