@@ -179,8 +179,8 @@
 
 .top-left-icon {
   position: relative;
-  top: 15%; 
-  right: 7%; 
+  top: 155px; 
+  left: 60px; 
   width: 50px; 
   height: auto;
   z-index: 3;
@@ -191,8 +191,8 @@
 
 .bottom-left-icon {
   position: relative;
-  top: 42%; 
-  right: 16%; 
+  top: 442px; 
+  left: -100px; 
   width: 50px; 
   height: auto;
   z-index: 3;
