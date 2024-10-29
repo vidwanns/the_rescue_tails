@@ -40,7 +40,7 @@ const ThirdSection = () => {
               Foster
             </button>
             <button className="help-button volunteer">
-              <img src="/images/ThirdSection/foodIcon.svg" alt="Volunteer Icon" className="button-icon" />
+              <img src="/images/ThirdSection/volunteer_icon3.jpg" alt="Volunteer Icon" className="button-icon" />
               Volunteer
             </button>
             <button className="help-button donate">

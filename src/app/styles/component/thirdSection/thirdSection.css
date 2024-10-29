@@ -38,7 +38,7 @@
   transition: opacity 0.3s ease;
 }
 
-.help-button:hover .button-icon {
+.help-button .button-icon {
   opacity: 1;
 }
 
@@ -212,31 +212,3 @@
   position: relative;
 }
 
-/* Icon-specific Styles */
-.donation-amount::before {
-  content: "💵"; /* Replace with SVG or image if available */
-  font-size: 24px;
-}
-
-.donation-bags::before {
-  content: "🛍️";
-  font-size: 24px;
-}
-
-.donation-foods::before {
-  content: "🍲";
-  font-size: 24px;
-}
-
-.donation-happy-furry::before {
-  content: "🐶";
-  font-size: 24px;
-}
-
-/* Connecting Lines */
-.journey-line {
-  width: 100px;
-  height: 2px;
-  background-color: #61D287;
-  border-top: 2px dashed #61D287;
-}
