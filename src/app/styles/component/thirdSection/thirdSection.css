@@ -19,8 +19,9 @@
   border-radius: 30px;
   border: none;
   cursor: pointer;
+  font-family: 'MO';
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal !important;
   background-color: white;
   color: black;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -154,7 +155,7 @@
 }
 
 .donation-title {
-  font-size: 24px;
+  font-size: 36px !important;
   color: #494949;
 }
 
