@@ -95,6 +95,7 @@
 }
 
 .third-section-title {
+  font-family: 'HV';
   font-size: 66px;
   color: #fff;
   margin-bottom: 20px;
@@ -102,6 +103,7 @@
 }
 
 .third-section-description {
+  font-family: 'MO';
   font-size: 24px;
   color: #fff;
   margin: 40px 40px 40px 0;
@@ -112,6 +114,7 @@
 }
 
 .adoption-info {
+  font-family: 'MO';
   font-size: 24px;
   color: #fff;
   margin: 40px 40px 40px 0;
@@ -122,7 +125,8 @@
 }
 
 .adoptables-link {
-  color: #f0b01b;
+  color: #F4B948;
+  font-family: 'MO';
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -155,7 +159,7 @@
 }
 
 .highlight {
-  color: #f27623;
+  color: #EE7331;
   font-weight: bold;
 }
 
@@ -178,7 +182,7 @@
 }
 
 .highlight {
-  color: #f27623;
+  color: #EE7331;
   font-weight: bold;
 }
 

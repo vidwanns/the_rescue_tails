@@ -23,7 +23,7 @@ const FirstSection = () => {
 
       <div className="content">
         <h1 className="first-section-title">
-          A Haven of Love for Cats and Dogs
+          A Haven of Love for <span className="highlight_1">Cats and Dogs</span>
         </h1>
         <p className="first-section-description">
           The Rescuing Tails is a dedicated rescue center committed to providing

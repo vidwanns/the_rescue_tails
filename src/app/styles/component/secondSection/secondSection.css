@@ -10,7 +10,7 @@
     justify-content: center;
     gap: 50px;
     padding-bottom: 40px;
-    background-color: #2b534a;
+    background-color: #132C15;
     padding: 20px;
     color: #fff;
     height: 350px;
@@ -76,11 +76,11 @@
 .stat-number {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #EE7331;
 }
 
 .stat-text {
-    font-family: 'Helvetica';
+    font-family: 'HV';
     font-weight: 100;
     font-size: 20px;
     padding-top: 10px;
@@ -131,7 +131,8 @@
 }
 
 .description-text {
-    font-size: 1.1rem;
+    font-family: 'HV';
+    font-size: 19px;
     color: #2b534a;
     margin: 30px auto;
     max-width: 680px;
@@ -139,17 +140,18 @@
 
 .cta-button {
     padding: 10px 30px;
-    background-color: #ff7e42;
+    background-color: #EE7331;
     color: white;
     border: none;
     border-radius: 30px;
+    font-family: 'MO';
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 17px;
     transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #e6692b;
+    background-color: #EE7331;
 }
 
 .curved-decoration {

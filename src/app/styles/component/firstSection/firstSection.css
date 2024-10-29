@@ -18,6 +18,11 @@
     letter-spacing: 0px;
 }
 
+.highlight_1 {
+    color: #EE7331;
+    font-weight: bold;
+  }
+
 .first-section-description {
     font-family: 'HV', sans-serif;
     font-size: 29px;
@@ -80,10 +85,10 @@
     padding: 6px 12px;
     position: relative;
     border-radius: 60px; /* Matches button border radius */
-    border: 10px dashed #EE8370;
+    border: 10px dashed #EE7331;
     border-style: dotted; /* Set the border style to dotted */
     border-width: 2px;
-    border-color: #ff7e42;
+    border-color: #EE7331;
     box-sizing: border-box;
 }
 
@@ -128,7 +133,7 @@
     position: absolute;
     top: 36%;
     left: 16%;
-    scale: .9;
+    scale: .7;
 }
 
 /* Right Side Curved Arrow and Text */
