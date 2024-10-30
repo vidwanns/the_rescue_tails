@@ -61,7 +61,7 @@ const ThirdSection = () => {
             </button>
             <button className="help-button volunteer">
               <img
-                src="/images/ThirdSection/volunteer_icon3.jpg"
+                src="/images/ThirdSection/food_volunteer.png"
                 alt="Volunteer Icon"
                 className="button-icon"
               />
