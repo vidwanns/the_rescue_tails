@@ -39,7 +39,7 @@ function Footer() {
 
               {/* Footer Contact at Top Right */}
               <div className="footer-contact">
-                <p>Awwars and manchester, blu</p>
+                <p>Awwars and Manchester, Blu</p>
                 <p>Pincode-901503</p>
                 <p>+999999999999</p>
                 <p>hello@gmail.com</p>
@@ -50,7 +50,9 @@ function Footer() {
             <div className="footer-donate">
               <button className="donate-btn">
                 Donate
-                <span className="arrow">→</span>
+                <span className="arrow">
+                  <img src="/images/footer/donate_arrow.svg" alt="Arrow Icon" />
+                </span>
               </button>
             </div>
           </div>
@@ -59,6 +61,5 @@ function Footer() {
     </footer>
   );
 }
-
 
 export default Footer;

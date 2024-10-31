@@ -135,7 +135,7 @@
 
 /* Footer Donate Button Section */
 .footer-donate {
-    margin-top: 200px; /* Keep some space between the contact info and the donate button */
+    margin-top: 240px; /* Keep some space between the contact info and the donate button */
     margin-left: -86px;
     display: flex;
     justify-content: flex-end; /* Align donate button to the right */
@@ -145,10 +145,11 @@
 .donate-btn {
     background-color: #EB7231;
     border: none;
-    padding: 10px 20px;
+    padding: 16px 32px;
     border-radius: 50px;
     color: white;
     width: 220px;
+    font-family: 'MO';
     font-size: 1.2rem;
     cursor: pointer;
     display: flex;
@@ -156,7 +157,21 @@
     justify-content: center;
 }
 
+.donate-btn:hover .arrow {
+    transform: translateX(5px); 
+    transition: transform 0.3s ease; 
+}
+
 .donate-btn .arrow {
     margin-left: 10px;
+    display: flex;
+    align-items: center;
     font-size: 1.4rem;
+    transition: transform 0.3s ease; 
 }
+
+.donate-btn .arrow img {
+    width: 1.4rem; 
+    height: auto;
+}
+
