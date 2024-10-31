@@ -2,6 +2,11 @@ import React from "react";
 import "../../styles/component/layout/footer.css";
 
 function Footer() {
+  const handleDonateClick = () => {
+    // Handle donate button click
+    console.log("Donate button clicked");
+  };
+
   return (
     <footer className="footer">
       <div className="outer-container-footer">
@@ -48,8 +53,8 @@ function Footer() {
 
             {/* Donate Button below */}
             <div className="footer-donate">
-              <button className="donate-btn">
-                Donate
+              <button className="donate-btn" onClick={handleDonateClick}>
+                <span className="button-text">Donate</span>
                 <span className="arrow">
                   <img src="/images/footer/donate_arrow.svg" alt="Arrow Icon" />
                 </span>

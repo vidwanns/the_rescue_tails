@@ -135,43 +135,82 @@
 
 /* Footer Donate Button Section */
 .footer-donate {
-    margin-top: 240px; /* Keep some space between the contact info and the donate button */
+    margin-top: 240px; 
     margin-left: -86px;
     display: flex;
-    justify-content: flex-end; /* Align donate button to the right */
+    justify-content: flex-end;
     width: 100%;
 }
 
 .donate-btn {
-    background-color: #EB7231;
-    border: none;
-    padding: 16px 32px;
-    border-radius: 50px;
-    color: white;
-    width: 220px;
-    font-family: 'MO';
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative; /* Position relative to allow absolute children */
+    background-color: #EB7231; /* Button background color */
+    border: none; /* No border */
+    padding: 16px 32px; /* Padding */
+    border-radius: 50px; /* Rounded corners */
+    color: white; /* Initial text color */
+    width: 220px; /* Button width */
+    font-family: 'MO'; /* Custom font */
+    font-size: 1.2rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    overflow: hidden; /* Prevent overflow of the overlay */
+    transition: color 0.3s ease; /* Smooth text color transition */
+    z-index: 1; /* Button content is above the overlay */
 }
 
-.donate-btn:hover .arrow {
-    transform: translateX(5px); 
-    transition: transform 0.3s ease; 
+.donate-btn::after {
+    content: ''; /* Overlay element */
+    position: absolute; /* Position absolute to fill button */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    background: #DFE6D0; /* Solid overlay color */
+    transform: scaleX(0); /* Initial state (not visible) */
+    transform-origin: right; /* Animation starts from the right */
+    transition: transform 0.25s ease-out; /* Transition for scaling */
+    border-radius: 50px; /* Match button's border radius */
+    z-index: 0; /* Ensure overlay is behind the text */
+}
+
+.donate-btn:hover::after {
+    transform: scaleX(1); /* Scale overlay to full width on hover */
+    transform-origin: left; /* Animation ends at the left */
+}
+
+.donate-btn:hover {
+    color: #EB7231; /* Change text color on hover */
 }
 
 .donate-btn .arrow {
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    transition: transform 0.3s ease; 
+    margin-left: 10px; /* Space between text and arrow */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center arrow vertically */
+    font-size: 1.4rem; /* Arrow size */
+    transition: transform 0.3s ease; /* Smooth transition for arrow */
+    z-index: 1; /* Ensure arrow is above the overlay */
+}
+
+.donate-btn:hover .arrow {
+    transform: translateX(5px); /* Move arrow to the right on hover */
+}
+
+.donate-btn .button-text {
+    z-index: 1; /* Ensure text is above the overlay */
+    position: relative; /* Position relative to ensure it's above overlay */
 }
 
 .donate-btn .arrow img {
-    width: 1.4rem; 
+    width: 1.4rem;
     height: auto;
+    filter: brightness(0) saturate(100%) invert(100%); /* Initial arrow color */
+    transition: filter 0.3s ease; /* Smooth transition for the arrow color change */
 }
 
+.donate-btn:hover .arrow img {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(66%) saturate(350%) hue-rotate(1deg) brightness(100%) contrast(102%);
+    transition: filter 0.3s ease; /* Smooth transition for the arrow color change */
+}
