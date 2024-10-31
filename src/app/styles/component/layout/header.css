@@ -59,11 +59,13 @@
 .buttons-container {
   display: flex;
   gap: 25px;
+  justify-content: center; /* Center buttons in the container */
 }
 
 .button {
+  position: relative; /* Position relative to allow for the overlay */
   display: inline-flex;
-  align-items: center;  /* Align text and icon */
+  align-items: center; /* Align text and icon */
   padding: 15px 30px;
   border-radius: 30px;
   font-family: 'MO', sans-serif !important; 
@@ -71,35 +73,92 @@
   font-size: 16px;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s ease;
+  overflow: hidden; /* Prevent overflow of the overlay */
+  transition: color 0.3s ease; /* Smooth text color transition */
+  color: white; /* Initial text color */
 }
 
 .button.contact {
   background-color: #DFE6D0;
-  color: #3A3935;
-  font-weight : lighter;
+  color: #3A3935; /* Initial text color for contact button */
+  font-weight: lighter;
+}
 
+.button.contact:hover {
+  color: black; 
+}
+
+.button.contact::after {
+  content: ''; /* Overlay for the contact button */
+  position: absolute; /* Position absolute to fill button */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  background: white; /* Overlay color */
+  transform: scaleX(0); /* Initial state (not visible) */
+  transform-origin: right; /* Animation starts from the right */
+  transition: transform 0.25s ease-out; /* Transition for scaling */
+  border-radius: 30px; /* Match button's border radius */
+  z-index: 0; /* Ensure overlay is behind the text */
+}
+
+.button.contact:hover::after {
+  transform: scaleX(1); /* Scale overlay to full width on hover */
+  transform-origin: left; /* Animation ends at the left */
 }
 
 .button.donate {
-  font-weight : 100 !important;
+  font-weight: 100 !important;
   letter-spacing: .5px;
   background-color: #EE7331;
-  color: white;
   display: flex;
-  align-items: center;
-  /* transition: background-color 0.3s ease, transform 0.3s ease; */
+  align-items: center; /* Center content vertically */
+  position: relative; /* Allow for absolute positioning of overlay */
+}
+
+.button.donate::after {
+  content: ''; /* Overlay for the donate button */
+  position: absolute; /* Position absolute to fill button */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  background: white; /* Overlay color */
+  transform: scaleX(0); /* Initial state (not visible) */
+  transform-origin: right; /* Animation starts from the right */
+  transition: transform 0.25s ease-out; /* Transition for scaling */
+  border-radius: 30px; /* Match button's border radius */
+  z-index: 0; /* Ensure overlay is behind the text */
+}
+
+.button.donate:hover::after {
+  transform: scaleX(1); /* Scale overlay to full width on hover */
+  transform-origin: left; /* Animation ends at the left */
 }
 
 .button.donate:hover {
   background-color: #d9611f; /* Slightly darker background on hover */
+  color: #EB7231; /* Change text color on hover */
 }
 
 .arrow-icon {
   width: 11px; /* Adjust the size of the arrow */
   height: auto;
   display: inline-block;
-  margin-left: 9px; /* Add a little space between the text and the icon */
-  transition: transform 0.3s ease;
+  margin-left: 9px; /* Add space between the text and the icon */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Transition for both color and movement */
+  filter: brightness(0) saturate(100%) invert(100%); /* Initial arrow color */
+  z-index: 1; /* Ensure arrow icon is above the overlay */
 }
 
+.button.donate:hover .arrow-icon {
+  filter: brightness(0) saturate(100%) invert(48%) sepia(66%) saturate(350%) hue-rotate(1deg) brightness(100%) contrast(102%); /* Change to the desired hover color */
+  transform: translateX(5px); /* Move arrow to the right on hover */
+}
+
+/* Ensuring text is above overlay */
+.button span {
+  position: relative; /* Position relative to ensure text is above overlay */
+  z-index: 1; /* Ensures text is above the overlay */
+}
