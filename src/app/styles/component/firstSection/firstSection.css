@@ -111,30 +111,43 @@
 
 
 /* SVG Icon Styles */
-.paw-icon {
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(3deg); }
+}
+
+.paw-icon, .bone-icon {
     position: absolute;
-    top: 20px;
-    width: 50px;
-    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.bone-icon:hover {
+    animation: wiggle 0.5s ease-in-out infinite;
 }
 
 .paw-icon.left {
     left: 5%;
     top: 24%;
+    width: 50px;
+    height: 50px;
+    transform: scale(0.7);
 }
 
 .paw-icon.right {
     right: 6%;
     top: 24%;
-    scale: .8;
+    width: 50px;
+    height: 50px;
+    transform: scale(0.8);
 }
 
 .bone-icon {
-    position: absolute;
     top: 36%;
     left: 16%;
-    scale: .7;
 }
+
 
 /* Right Side Curved Arrow and Text */
 .curved-arrow-section {
