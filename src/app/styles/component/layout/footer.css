@@ -49,10 +49,10 @@
     left: 30px;  /* Adjusts the distance from the left */
     color: #E7E7E7;
     font-family: 'HV';
-    font-size: 2rem;
+    font-size: 68px;
     font-weight: 100;
     line-height: 1.2;
-    max-width: 550px; /* Control text wrapping */
+    max-width: 900px; /* Control text wrapping */
 }
 
 

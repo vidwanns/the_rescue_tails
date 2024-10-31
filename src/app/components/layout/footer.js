@@ -13,7 +13,9 @@ function Footer() {
 
           {/* Text in the Bottom Left */}
           <div className="text-left-corner">
-            <h1>We Help Homeless Animals to Get a Decent Life!</h1>
+            <div className="text-part">We Help</div>
+            <div className="text-part">Homeless Animals</div>
+            <div className="text-part">to Get a Decent Life!</div>
           </div>
 
           {/* Text Content Positioned to the Top */}
