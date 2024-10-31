@@ -11,8 +11,7 @@
 
 .outer-container-footer {
     background-color: #214943; 
-    /* padding-top: 170px; */
-    border-radius: 0px 0px 0 0;
+    border-radius: 0;
     margin: 0 auto;
     position: relative;
     width: 1600px;
@@ -29,7 +28,7 @@
     justify-content: space-between;
     align-items: flex-start; /* Aligns content to the top */
     width: 1480px; 
-    height: 400px;
+    height: 500px;
     position: relative;
 }
 
@@ -37,9 +36,10 @@
 .logo {
     display: flex;
     align-items: center;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 40px;
+    margin-top: 40px;
     padding-right: 15px;
+    scale: 1.5;
 }
 
 /* Text in the Bottom Left */
@@ -48,6 +48,7 @@
     bottom: 40px; /* Adjusts the distance from the bottom */
     left: 30px;  /* Adjusts the distance from the left */
     color: #E7E7E7;
+    font-family: 'HV';
     font-size: 2rem;
     font-weight: 100;
     line-height: 1.2;
@@ -64,27 +65,27 @@
     position: absolute;
     top: 0; /* Move the text-wrapper to the top of the inner container */
     right: 0;
-    padding-top: 30px; /* Add padding to the top to avoid touching the edge */
+    padding-top: 50px; /* Add padding to the top to avoid touching the edge */
     padding-right :100px;
 }
 
 /* Footer Links Section */
 .footer-links {
     display: flex;
-    gap: 50px;
-    margin-right: 60px; /* Add space between links and contact */
+    gap: 80px;
+    margin-right: 70px; /* Add space between links and contact */
 }
 
 .links-column {
     list-style: none;
     font-family: 'MO';
-    font-size: 15px;
+    font-size: 18px;
     color: #E7E7E7;
     cursor: pointer;
 }
 
 .links-column li {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     transition: color 0.3s;
     position: relative;
     color: #E7E7E7;
@@ -116,7 +117,7 @@
 
 /* Vertical Divider Line */
 .vertical-divider {
-    width: 2px;
+    width: 3px;
     height: 100px; /* Adjust the height based on your design */
     background-color:  #214943;
     margin-right: 60px; /* Space between the links and contact */
