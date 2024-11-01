@@ -64,14 +64,19 @@ const Header = () => {
             <span>Contact Us</span>
           </motion.div>
 
-          <motion.div className="button donate" whileHover={{ scale: 1.05 }}>
-            <span>Donate</span>
-            <img
-              src="/images/header/arrow-up-right.svg"
-              alt="Arrow Icon"
-              className="arrow-icon"
-            />
-          </motion.div>
+          <motion.div
+  className="button donate"
+  onHoverStart={(e) => {}}
+  onHoverEnd={(e) => {}}
+>
+  <span>Donate</span>
+  <img
+    src="/images/header/arrow-up-right.svg"
+    alt="Arrow Icon"
+    className="arrow-icon"
+  />
+</motion.div>
+
         </div>
       </div>
     </motion.header>
