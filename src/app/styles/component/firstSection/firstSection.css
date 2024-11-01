@@ -1,6 +1,7 @@
 .first-section {
     position: relative;
-    text-align: center; /* This centers the text inside the section */
+    text-align: center;
+    /* This centers the text inside the section */
     padding: 55px;
     background-color: #f8f4ef;
 }
@@ -8,7 +9,7 @@
 .first-section-title {
     font-family: 'HV', sans-serif;
     font-weight: 600;
-    font-size:120px;   
+    font-size: 120px;
     color: #000;
     margin-bottom: 20px;
     margin: 0 auto 40px;
@@ -21,17 +22,17 @@
 .highlight_1 {
     color: #EE7331;
     font-weight: bold;
-  }
+}
 
 .first-section-description {
     font-family: 'HV', sans-serif;
     font-size: 29px;
     color: #3F1063;
-    margin: 0 auto 40px; 
+    margin: 0 auto 40px;
     width: 812px;
     font-weight: 500;
     letter-spacing: 0;
-    text-align: center; 
+    text-align: center;
 }
 
 .images-container {
@@ -50,20 +51,27 @@
 .donate-section {
     margin-top: 60px;
     display: flex;
-    justify-content: center; /* Center the donate button */
-    align-items: flex-start; /* Align items at the start of the container */
-    gap: 20px; /* Space between left section and button */
+    justify-content: center;
+    /* Center the donate button */
+    align-items: flex-start;
+    /* Align items at the start of the container */
+    gap: 20px;
+    /* Space between left section and button */
 }
 
 .left-align {
     display: flex;
-    flex-direction: column; /* Stack the text and icon vertically */
-    align-items: flex-start; /* Align items to the left */
-    gap: 5px; /* Space between the text and the arrow */
+    flex-direction: column;
+    /* Stack the text and icon vertically */
+    align-items: flex-start;
+    /* Align items to the left */
+    gap: 5px;
+    /* Space between the text and the arrow */
 }
 
 .curved-arrow-icon-2 {
-    width: 30px; /* Adjust width if needed */
+    width: 30px;
+    /* Adjust width if needed */
     height: auto;
     transform: rotate(10deg);
     scale: 1.5;
@@ -78,15 +86,18 @@
     color: #333;
     letter-spacing: 0px;
     margin: 0;
-    transform: matrix(0.98, 0.17, -0.17, 0.98, 0, 0);}
+    transform: matrix(0.98, 0.17, -0.17, 0.98, 0, 0);
+}
 
 .donate-button-wrapper {
     display: inline-block;
     padding: 6px 12px;
     position: relative;
-    border-radius: 60px; /* Matches button border radius */
+    border-radius: 60px;
+    /* Matches button border radius */
     border: 10px dashed #EE7331;
-    border-style: dotted; /* Set the border style to dotted */
+    border-style: dotted;
+    /* Set the border style to dotted */
     border-width: 2px;
     border-color: #EE7331;
     box-sizing: border-box;
@@ -94,34 +105,57 @@
 
 
 .donate-button {
-    padding: 25px 60px; /* Inner padding for the button */
-    background-color: #ff7e42; /* Original background color */
+    padding: 25px 60px;
+    /* Inner padding for the button */
+    background-color: #ff7e42;
+    /* Original background color */
     color: white;
-    border: none; /* Remove the default border */
-    border-radius: 60px; /* Keep the original border radius */
+    border: none;
+    /* Remove the default border */
+    border-radius: 60px;
+    /* Keep the original border radius */
     cursor: pointer;
     font-size: 1.2rem;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    /* Add transition for hover effect */
 }
 
 .donate-button:hover {
-    background-color: transparent; /* Change to transparent on hover */
-    color: #ff7e42; /* Change text color on hover */
-    transform: scale(1.05); /* Scale up the button slightly on hover */
-    box-shadow: 0 4px 15px rgba(255, 126, 66, 0.5); /* Add a shadow effect on hover */
+    background-color: transparent;
+    /* Change to transparent on hover */
+    color: #ff7e42;
+    /* Change text color on hover */
+    transform: scale(1.05);
+    /* Scale up the button slightly on hover */
+    box-shadow: 0 4px 15px rgba(255, 126, 66, 0.5);
+    /* Add a shadow effect on hover */
 }
 
 
 
 /* SVG Icon Styles */
 @keyframes wiggle {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(-5deg); }
-    75% { transform: rotate(3deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(3deg);
+    }
 }
 
-.paw-icon, .bone-icon {
+.paw-icon,
+.bone-icon {
     position: absolute;
     transition: transform 0.3s ease;
 }
@@ -155,7 +189,8 @@
 /* Right Side Curved Arrow and Text */
 .curved-arrow-section {
     position: absolute;
-    top: 30%; /* Keep the section's general position */
+    top: 30%;
+    /* Keep the section's general position */
     right: 16%;
     display: flex;
     align-items: center;
@@ -167,8 +202,10 @@
     width: 50px;
     height: 50px;
     scale: 3;
-    position: relative; /* Use relative positioning */
-    top: 120px; /* Move the arrow down by 20px */
+    position: relative;
+    /* Use relative positioning */
+    top: 120px;
+    /* Move the arrow down by 20px */
     left: 20px;
 }
 
@@ -177,12 +214,51 @@
     font-size: 26px;
     color: #4d4062;
     width: 120px;
-    position: relative; /* Independent of the arrow */
-    top: 30px; /* Ensure it stays at the original position */
+    position: relative;
+    /* Independent of the arrow */
+    top: 30px;
+    /* Ensure it stays at the original position */
     left: 80px;
     transform: rotate(40deg);
     font-family: 'FT', sans-serif;
     line-height: 85%;
     font-weight: 500;
 
+}
+
+.scroller {
+    white-space: nowrap;
+    position: relative;
+    margin-top: 12.6rem;
+    margin-bottom: 3.6rem;
+}
+
+.cards {
+    display: flex;
+}
+
+.cardContainer {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    margin-right: 1.3rem;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+    position: relative;
+
+    &:nth-child(odd) {
+        transform: translateY(-2.31rem);
+    }
+
+    .card {
+        width: 200px;
+        height: 300px;
+        border-radius: 10px;
+        margin-right: 1.3rem;
+        object-fit: cover;
+        border-radius: 10px;
+        flex-shrink: 0;
+        cursor: pointer;
+    }
 }
