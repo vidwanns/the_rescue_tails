@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import "../../styles/component/sixthSection/sixthSection.css";
 
 const SixthSection = () => {
+  const imagesRef = useRef([]);
+
+  useEffect(() => {
+    const images = imagesRef.current;
+    const totalImages = images.length;
+    const duration = 4; // Duration each image stays fully visible
+    const transitionDuration = 1; // Duration of fade transition
+
+    images.forEach((img, i) => {
+      gsap.to(img, {
+        opacity: 1,
+        duration: transitionDuration,
+        delay: i * (duration + transitionDuration),
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: (totalImages - 1) * (duration + transitionDuration),
+      });
+    });
+  }, []);
+
   return (
     <section className="sixth-section">
       <div className="outer-container">
@@ -29,7 +50,7 @@ const SixthSection = () => {
             <h3>Say Hello!</h3>
             <p>
               Have questions, want to be volunteer or partner? We'd love to hear
-              from you! Contact us and we’ll get back to you as soon possible
+              from you! Contact us and we’ll get back to you as soon as possible.
             </p>
 
             <form>
@@ -63,7 +84,7 @@ const SixthSection = () => {
                       <img
                         src="/images/sixthSection/dropDown-icon.svg"
                         alt="Dropdown Arrow"
-                        style={{ width: "16px", height: "16px" }} // Adjust size as needed
+                        style={{ width: "16px", height: "16px" }}
                       />
                     </span>
                   </div>
@@ -87,11 +108,18 @@ const SixthSection = () => {
           </div>
 
           <div className="contact-info">
-            <img
-              src="/images/sixthSection/running-dogs.png"
-              alt="Dogs Running"
-              className="contact-image"
-            />
+            <div className="contact-images">
+              {["image1.png", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg"].map((src, index) => (
+                <img
+                  key={index}
+                  ref={(el) => imagesRef.current[index] = el}
+                  src={`/images/sixthSection/${src}`}
+                  alt={`Contact Image ${index + 1}`}
+                  className="contact-image"
+                />
+              ))}
+            </div>
+
             <div className="info-details">
               <div className="info-item">
                 <hr className="info-line" />

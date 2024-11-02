@@ -3,12 +3,11 @@ import "../../styles/component/layout/footer.css";
 
 function Footer() {
   const handleDonateClick = () => {
-    // Handle donate button click
     console.log("Donate button clicked");
   };
 
   return (
-    <footer className="footer">
+    <footer id="site-footer" className="footer"> {/* Add id here */}
       <div className="outer-container-footer">
         <div className="inner-container-footer">
           {/* Logo at the Start */}
