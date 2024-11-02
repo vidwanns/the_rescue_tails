@@ -1,10 +1,32 @@
-'use client';
-
-import React from 'react';
-import { motion } from 'framer-motion'; // Import motion from framer-motion
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'framer-motion';
 import '../../styles/component/secondSection/secondSection.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const SecondSection = () => {
+  useEffect(() => {
+    // Animate each span in .large-text similarly to text-content in FourthSection
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".main-title",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none none reset",
+      },
+    });
+
+    tl.from(".large-text span", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+    });
+  }, []);
+
   return (
     <section className="second-section">
       <div className="stats-container">
@@ -39,7 +61,6 @@ const SecondSection = () => {
           <img src="/images/secondSection/curved-line.svg" alt="Curved Decoration-2" />
         </div>
 
-        {/* Main Title with Images and Text */}
         <div className="main-title">
           <div className="large-text">
             <span className="image-box">
@@ -63,12 +84,10 @@ const SecondSection = () => {
           </div>
         </div>
 
-        {/* Heart SVG */}
         <div className="svg-heart">
           <img src="/images/secondSection/Icon akar-heart.svg" alt="Heart Icon" />
         </div>
 
-        {/* Paw SVG */}
         <div className="svg-paw-top-left">
           <img src="/images/secondSection/paw.svg" alt="Paw Icon" />
         </div>
@@ -87,12 +106,9 @@ const SecondSection = () => {
           With compassion at our core, we aim to transform their lives and build a brighter future for them.
         </p>
 
-        {/* CTA Button with Framer Motion */}
         <motion.button
           className="cta-button"
-          whileHover={{ scale: 1.1 }} // Animation on hover
-          onHoverStart={(e) => {}}
-          onHoverEnd={(e) => {}}
+          whileHover={{ scale: 1.1 }}
         >
           Let's Connect
         </motion.button>
