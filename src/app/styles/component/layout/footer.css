@@ -21,18 +21,16 @@
     align-items: center;
 }
 
-/* Content Wrapper */
 .inner-container-footer {
     background-color: #102624;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Aligns content to the top */
+    align-items: flex-start;
     width: 1480px; 
     height: 500px;
     position: relative;
 }
 
-/* Logo at the start of the container */
 .logo {
     display: flex;
     align-items: center;
@@ -42,41 +40,39 @@
     scale: 1.5;
 }
 
-/* Text in the Bottom Left */
 .text-left-corner {
     position: absolute;
-    bottom: 40px; /* Adjusts the distance from the bottom */
-    left: 30px;  /* Adjusts the distance from the left */
+    bottom: 40px;
+    left: 30px;
     color: #E7E7E7;
     font-family: 'HV';
     font-size: 68px;
     font-weight: 100;
     line-height: 1.2;
-    max-width: 900px; /* Control text wrapping */
+    max-width: 900px;
 }
 
-
-/* Container for Footer Links and Contact */
 .text-wrapper {
     display: flex;
-    justify-content: flex-end; /* Align text elements to the right */
-    align-items: flex-start; /* Align links and contact to the top */
+    justify-content: flex-end;
+    align-items: flex-start;
     width: 100%;
     position: absolute;
-    top: 0; /* Move the text-wrapper to the top of the inner container */
+    top: 0;
     right: 0;
-    padding-top: 50px; /* Add padding to the top to avoid touching the edge */
-    padding-right :100px;
+    padding-top: 50px;
+    padding-right: 100px;
 }
 
 /* Footer Links Section */
 .footer-links {
     display: flex;
     gap: 80px;
-    margin-right: 70px; /* Add space between links and contact */
+    margin-right: 70px;
 }
 
-.links-column {
+.links-column,
+.links-column2 {
     list-style: none;
     font-family: 'MO';
     font-size: 18px;
@@ -84,56 +80,61 @@
     cursor: pointer;
 }
 
-.links-column li {
+.links-column li,
+.links-column2 li {
     margin-bottom: 16px;
-    transition: color 0.3s;
     position: relative;
+    transition: color 0.3s;
     color: #E7E7E7;
 }
 
-/* Change text color on hover */
-.links-column li:hover {
-    color: #aaaaaa; 
-}
-
-/* Underline styling */
-.links-column li::after {
+/* Underline styling for both links-column and links-column2 */
+.links-column li::after,
+.links-column2 li::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -5px; /* Position the underline just below the text */
+    bottom: -5px;
     width: 100%;
-    height: 1px; /* Thickness of the underline */
-    background-color: white; /* Underline color */
-    transform: scaleX(0); /* Start with no underline */
-    transform-origin: left; /* Start animation from the left */
-    transition: transform 0.3s ease; /* Smooth animation */
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* Narrower underline for About and Contacts */
+.links-column2 .about::after,
+.links-column2 .contacts::after {
+    width: 74%; /* Reduce underline width to 50% of text width */
+}
+
+.links-column li:hover,
+.links-column2 li:hover {
+    color: #aaaaaa; 
 }
 
 /* Expand underline on hover */
-.links-column li:hover::after {
-    transform: scaleX(1); /* Expand underline on hover */
+.links-column li:hover::after,
+.links-column2 li:hover::after {
+    transform: scaleX(1);
 }
 
-/* Vertical Divider Line */
 .vertical-divider {
     width: 3px;
-    height: 100px; /* Adjust the height based on your design */
-    background-color:  #214943;
-    margin-right: 60px; /* Space between the links and contact */
+    height: 100px;
+    background-color: #214943;
+    margin-right: 60px;
 }
 
-
-/* Footer Contact Information at the Top Right */
 .footer-contact {
-    font-family:'MO';
+    font-family: 'MO';
     font-size: 15px;
     line-height: 1.9;
-    text-align: left; /* Right-align the contact info */
+    text-align: left;
     margin-top: -6px;
 }
 
-/* Footer Donate Button Section */
 .footer-donate {
     margin-top: 240px; 
     margin-left: -86px;
@@ -143,74 +144,74 @@
 }
 
 .donate-btn {
-    position: relative; /* Position relative to allow absolute children */
-    background-color: #EB7231; /* Button background color */
-    border: none; /* No border */
-    padding: 16px 32px; /* Padding */
-    border-radius: 50px; /* Rounded corners */
-    color: white; /* Initial text color */
-    width: 220px; /* Button width */
-    font-family: 'MO'; /* Custom font */
-    font-size: 1.2rem; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    display: flex; /* Flexbox for alignment */
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-    overflow: hidden; /* Prevent overflow of the overlay */
-    transition: color 0.3s ease; /* Smooth text color transition */
-    z-index: 1; /* Button content is above the overlay */
+    position: relative;
+    background-color: #EB7231;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    color: white;
+    width: 220px;
+    font-family: 'MO';
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    z-index: 1;
 }
 
 .donate-btn::after {
-    content: ''; /* Overlay element */
-    position: absolute; /* Position absolute to fill button */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    top: 0; /* Position at the top */
-    left: 0; /* Position at the left */
-    background: #DFE6D0; /* Solid overlay color */
-    transform: scaleX(0); /* Initial state (not visible) */
-    transform-origin: right; /* Animation starts from the right */
-    transition: transform 0.25s ease-out; /* Transition for scaling */
-    border-radius: 50px; /* Match button's border radius */
-    z-index: 0; /* Ensure overlay is behind the text */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #DFE6D0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease-out;
+    border-radius: 50px;
+    z-index: 0;
 }
 
 .donate-btn:hover::after {
-    transform: scaleX(1); /* Scale overlay to full width on hover */
-    transform-origin: left; /* Animation ends at the left */
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .donate-btn:hover {
-    color: #EB7231; /* Change text color on hover */
+    color: #EB7231;
 }
 
 .donate-btn .arrow {
-    margin-left: 10px; /* Space between text and arrow */
-    display: flex; /* Flexbox for alignment */
-    align-items: center; /* Center arrow vertically */
-    font-size: 1.4rem; /* Arrow size */
-    transition: transform 0.3s ease; /* Smooth transition for arrow */
-    z-index: 1; /* Ensure arrow is above the overlay */
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+    z-index: 1;
 }
 
 .donate-btn:hover .arrow {
-    transform: translateX(5px); /* Move arrow to the right on hover */
+    transform: translateX(5px);
 }
 
 .donate-btn .button-text {
-    z-index: 1; /* Ensure text is above the overlay */
-    position: relative; /* Position relative to ensure it's above overlay */
+    z-index: 1;
+    position: relative;
 }
 
 .donate-btn .arrow img {
     width: 1.4rem;
     height: auto;
-    filter: brightness(0) saturate(100%) invert(100%); /* Initial arrow color */
-    transition: filter 0.3s ease; /* Smooth transition for the arrow color change */
+    filter: brightness(0) saturate(100%) invert(100%);
+    transition: filter 0.3s ease;
 }
 
 .donate-btn:hover .arrow img {
     filter: brightness(0) saturate(100%) invert(48%) sepia(66%) saturate(350%) hue-rotate(1deg) brightness(100%) contrast(102%);
-    transition: filter 0.3s ease; /* Smooth transition for the arrow color change */
+    transition: filter 0.3s ease;
 }

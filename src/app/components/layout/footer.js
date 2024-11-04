@@ -7,7 +7,7 @@ function Footer() {
   };
 
   return (
-    <footer id="site-footer" className="footer"> {/* Add id here */}
+    <footer id="site-footer" className="footer">
       <div className="outer-container-footer">
         <div className="inner-container-footer">
           {/* Logo at the Start */}
@@ -25,23 +25,23 @@ function Footer() {
           {/* Text Content Positioned to the Top */}
           <div className="text-container">
             <div className="text-wrapper">
-              {/* Footer Links (Left side of contact) */}
+              {/* Footer Links */}
               <div className="footer-links">
                 <ul className="links-column">
                   <li>Home</li>
                   <li>Adopt</li>
                   <li>Home</li>
                 </ul>
-                <ul className="links-column">
-                  <li>About Us</li>
-                  <li>Contacts</li>
+                <ul className="links-column2">
+                  <li className="about">About Us</li>
+                  <li className="contacts">Contacts</li>
                   <li>How to Help</li>
                 </ul>
               </div>
 
               <div className="vertical-divider"></div>
 
-              {/* Footer Contact at Top Right */}
+              {/* Footer Contact */}
               <div className="footer-contact">
                 <p>Awwars and Manchester, Blu</p>
                 <p>Pincode-901503</p>
@@ -50,7 +50,7 @@ function Footer() {
               </div>
             </div>
 
-            {/* Donate Button below */}
+            {/* Donate Button */}
             <div className="footer-donate">
               <button className="donate-btn" onClick={handleDonateClick}>
                 <span className="button-text">Donate</span>
