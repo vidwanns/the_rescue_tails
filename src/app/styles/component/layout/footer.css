@@ -88,36 +88,9 @@
     color: #E7E7E7;
 }
 
-/* Underline styling for both links-column and links-column2 */
-.links-column li::after,
-.links-column2 li::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 1px;
-    background-color: white;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-/* Narrower underline for About and Contacts */
-.links-column2 .about::after,
-.links-column2 .contacts::after {
-    width: 74%; /* Reduce underline width to 50% of text width */
-}
-
 .links-column li:hover,
 .links-column2 li:hover {
     color: #aaaaaa; 
-}
-
-/* Expand underline on hover */
-.links-column li:hover::after,
-.links-column2 li:hover::after {
-    transform: scaleX(1);
 }
 
 .vertical-divider {
