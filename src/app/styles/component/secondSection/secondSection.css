@@ -89,6 +89,45 @@
     margin: auto;
 }
 
+
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: row; /* Stack items vertically on mobile */
+        gap: 20px; /* Reduce gap for mobile view */
+        height: 108px; /* Adjust height to fit content */
+        padding: 20px; /* Maintain padding */
+    }
+
+    .stat-box {
+        width: 100%; /* Full width for mobile */
+        max-width: 300px; /* Limit maximum width */
+        height: auto; /* Adjust height for content */
+        padding: 5px 5px 5px; /* Adjust padding for mobile */
+        margin: 0 auto; /* Center each stat box */
+    }
+
+    .stat-box::before {
+    border-radius: 8px;
+    }
+
+    .stat-number {
+        font-size: 22px; /* Adjust font size for mobile */
+    }
+
+    .stat-text {
+        font-size: 10px; /* Reduce font size for readability */
+        width: 100%; /* Full width for mobile */
+        padding-top: 4px;
+    }
+
+    .heart-icon {
+        scale: .8; /* Adjust icon size */
+        margin-bottom: 0; /* Reduce bottom margin */
+    }
+}
+
+
+
 .main-content {
     margin-top: 50px;
     height: 700px;
@@ -201,6 +240,15 @@
     width: 70px;
     height: auto;
 }
+@media (max-width: 768px) {
+    .svg-paw-top-left {
+        position: absolute;
+        top: 1%;
+        left: -4%;
+        scale: .3;
+        transform: rotate(-40deg);
+    }
+}
 
 /* Paw SVG positioning for bottom-left */
 .svg-paw-bottom-left {
@@ -220,6 +268,14 @@
     top: 23%;
     right: 5%;
     scale: 1.5;
+}
+@media (max-width: 768px) {
+    .svg-paw-top-right {
+        position: absolute;
+        top: 6%;
+        right: -4%;
+        scale: .3;
+    }
 }
 
 .svg-paw-top-right img {
