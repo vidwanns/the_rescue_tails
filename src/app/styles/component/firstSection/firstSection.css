@@ -36,6 +36,35 @@
     text-align: center;
 }
 
+/* Mobile responsiveness for .first-section-title, .highlight_1, and .first-section-description */
+@media (max-width: 768px) {
+
+    .first-section {
+        padding-top: 140px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .first-section-title {
+        font-size: 35px; /* Adjust font size for smaller screens */
+        width: 100%; /* Full width to fit mobile screen */
+        padding: 0; /* Add padding for better readability */
+    }
+
+    .highlight_1 {
+        font-size: 35px; /* Adjust size to remain prominent on mobile */
+    }
+
+    .first-section-description {
+        font-size: 15px; /* Adjust font size for readability on smaller screens */
+        width: 100%; /* Full width for mobile */
+        padding: 0 12px; /* Add padding to keep text away from edges */
+        line-height: 1.8;
+    }
+
+}
+
+
 .images-container {
     display: flex;
     justify-content: center;
@@ -72,11 +101,16 @@
 
 .curved-arrow-icon-2 {
     width: 30px;
-    /* Adjust width if needed */
     height: auto;
     transform: rotate(10deg);
     scale: 1.5;
     margin-left: 30px;
+}
+@media (max-width: 768px) {
+.curved-arrow-icon-2 {
+    scale: 2.5;
+    transform: rotate(-10deg);
+}
 }
 
 
@@ -173,6 +207,15 @@
     transform: scale(0.7);
 }
 
+@media (max-width: 768px) {
+    .paw-icon.left{
+    left: 5%;
+    top: 38%;
+    width: 30px;
+    height: 30px;
+}
+}
+
 .paw-icon.right {
     right: 6%;
     top: 24%;
@@ -180,22 +223,49 @@
     height: 50px;
     transform: scale(0.8);
 }
+@media (max-width: 768px) {
+    .paw-icon.right {
+        right: 6%;
+        top: 18%;
+        width: 50px;
+        height: 50px;
+        scale: 0.6;
+    }
+}
 
 .bone-icon {
     top: 36%;
     left: 16%;
 }
 
+@media (max-width: 768px) {
+    .bone-icon {
+        top: 16.5%;
+        left: -1%;
+        scale: .25;
+    }
+}
 
 /* Right Side Curved Arrow and Text */
 .curved-arrow-section {
     position: absolute;
     top: 30%;
-    /* Keep the section's general position */
     right: 16%;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .curved-arrow-section {
+        position: absolute;
+        top: 31%;
+        right: 16%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        scale: 0.7;
+    }
 }
 
 /* Targeting only the arrow */
@@ -204,10 +274,13 @@
     height: 50px;
     scale: 3;
     position: relative;
-    /* Use relative positioning */
     top: 120px;
-    /* Move the arrow down by 20px */
     left: 20px;
+}
+@media (max-width: 768px) {
+.curved-arrow-icon {
+    scale: 2;
+}
 }
 
 /* Targeting only the text */
@@ -216,9 +289,7 @@
     color: #4d4062;
     width: 120px;
     position: relative;
-    /* Independent of the arrow */
     top: 30px;
-    /* Ensure it stays at the original position */
     left: 80px;
     transform: rotate(40deg);
     font-family: 'FT', sans-serif;
