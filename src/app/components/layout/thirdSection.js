@@ -96,11 +96,13 @@ const ThirdSection = () => {
             See How Your Donation <span className="highlight">Transforms</span> Lives!
           </motion.h3>
           <div className="donation-journey">
-            <Lottie
-              animationData={pet}
-              loop={true}
-              style={{ position: "absolute", left: "-100px" }}
-            />
+          <Lottie
+  animationData={pet}
+  loop={true}
+  className="lottie-animation"
+  style={{ position: "absolute" }}
+/>
+
           </div>
         </div>
       </motion.div>

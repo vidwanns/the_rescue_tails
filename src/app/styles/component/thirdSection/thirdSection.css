@@ -10,6 +10,15 @@
   gap: 15px;
   margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+  .button-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    margin-left: -50px;
+    scale: .8;
+  }
+}
 
 .help-button {
   display: flex;
@@ -56,10 +65,20 @@
   top: 12%;
   right: 14%;
 }
+@media (max-width: 768px) {
+  .paw-icon-top-right {
+   display: none;
+  }
+}
 
 .bone-icon-left-center {
   top: 45%;
   left: 20%;
+}
+@media (max-width: 768px) {
+  .bone-icon-left-center {
+   display: none;
+  }
 }
 
 .paw-icon-below-bone {
@@ -67,6 +86,11 @@
   left: 2%;
   transform: rotate(70deg);
   scale: 0.8;
+}
+@media (max-width: 768px) {
+  .paw-icon-below-bone {
+   display: none;
+  }
 }
 
 /* Text and Layout */
@@ -89,6 +113,16 @@
   height: auto;
   object-fit: cover;
 }
+@media (max-width: 768px) {
+  .dog-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 166px;
+    height: auto;
+    object-fit: cover;
+  }
+}
 
 .text-container {
   flex: 2;
@@ -102,6 +136,17 @@
   margin-bottom: 20px;
   text-align: start;
 }
+@media (max-width: 768px) {
+  .third-section-title {
+    font-family: 'HV';
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 60px;
+    padding-right: 60px;
+    margin-top: -20px;
+    text-align: center;
+  }
+}
 
 .third-section-description {
   font-family: 'MO';
@@ -113,6 +158,19 @@
   text-align: start;
   letter-spacing: 0.5px;
 }
+@media (max-width: 768px) {
+  .third-section-description {
+    font-family: 'MO';
+    font-size: 14px;
+    color: #fff;
+    margin: 40px 40px 40px 0;
+    padding-right: 36%;
+    width: 100%;
+    text-align: start;
+    letter-spacing: 0.5px;
+    line-height: 1.5; 
+   }
+}
 
 .adoption-info {
   font-family: 'MO';
@@ -123,6 +181,19 @@
   width: 100%;
   text-align: start;
   letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  .adoption-info {
+    font-family: 'MO';
+    font-size: 14px;
+    color: #fff;
+    margin: 40px 40px 40px 0;
+    padding-right: 36%;
+    width: 100%;
+    text-align: start;
+    letter-spacing: 0.5px;
+    line-height: 1.5; 
+  }
 }
 
 .adoptables-link {
@@ -225,17 +296,35 @@
 /* Dog Icon Positioned at the Top-Right of the Donation Graphic */
 .dog-icon-above-graphic {
   position: absolute;
-  top: -51.5%; /* Adjust this value to move it vertically */
-  right: 14%; /* Adjust this value to move it horizontally */
+  top: -51.5%; 
+  right: 14%; 
   width: 100px;
   height: auto;
-  z-index: 2; /* Ensure it appears above other elements */
+  z-index: 2;
   scale: 2.6;
+}
+@media (max-width: 768px) {
+  .dog-icon-above-graphic {
+    position: absolute;
+    top:  -85.5%; 
+    right: 14%; 
+    width: 100px;
+    height: auto;
+    z-index: 2;
+    scale: 1.2;
+  }
 }
 
 .donation-title {
-  font-size: 36px !important;
-  color: #494949;
+  font-size: 36px;
+  color: white;
+}
+@media (max-width: 768px) {
+  .donation-title {
+    font-size: 15px;
+    color: white;
+    margin-top: -14px;
+  }
 }
 
 .highlight {
@@ -254,16 +343,17 @@
   text-align: center;
   color: white;
 }
-
-.donation-title {
-  font-size: 24px;
-  color: #ffffff;
-  margin-bottom: 30px;
-}
-
-.highlight {
-  color: #EE7331;
-  font-weight: bold;
+@media (max-width: 768px) {
+  .new-container {
+    background-color: #132C15;
+    padding: 30px;
+    border-radius: 10px;
+    width: 386px;
+    height: 135px;
+    margin: auto;
+    text-align: center;
+    color: white;
+  }
 }
 
 /* Journey Graphic Styling */
@@ -272,6 +362,25 @@
   align-items: center;
   justify-content: center;
   margin-top: 100px;
+}
+@media (max-width: 768px) {
+  .donation-journey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+
+.donation-journey .lottie-animation {
+  position: absolute;
+  left: -100px;
+}
+
+@media (max-width: 768px) {
+  .donation-journey .lottie-animation {
+    left: -50px; /* Shift to -50px for mobile */
+  }
 }
 
 .journey-step {
@@ -291,4 +400,3 @@
   justify-content: center;
   position: relative;
 }
-
