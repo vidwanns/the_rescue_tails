@@ -1,30 +1,19 @@
 .fifth-section {
-    position: relative; /* For absolutely positioning the SVG icons */
+    position: relative;
     padding-top: 6rem;
-    background-color: #F2EEEA; /* Light background */
+    background-color: #F2EEEA;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 911px;
-}
-@media (max-width: 768px) {
-    .fifth-section {
-        position: relative; /* For absolutely positioning the SVG icons */
-        padding-top: 1rem;
-        background-color: #F2EEEA; /* Light background */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 290px;
-        width: 450px;
-    }
+    height: auto;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width:100% !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -32,106 +21,65 @@
     position: absolute;
     bottom: 0;
     left: -10px;
-    width: 150px; /* Adjust size as needed */
+    width: 150px;
     height: auto;
     z-index: 1;
-  }
-@media (max-width: 768px) {
-    .line-svg {
-        display: none;
-    }
 }
 
 .fifth_content {
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.top-row, .bottom-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: auto;
-}
-@media (max-width: 768px) {
-.fifth_content {
-    scale: .3;
-    width: 400px;
-    margin-top: -235px;
-    margin-left: -140px;
-}
-}
-
-.top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    margin: auto;
-    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
-.bottom-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    width: 100%;
-    gap: 2rem;
-    margin-bottom: 5rem;
-}
-
-.top-image,
-.bottom-image {
+.top-image, .bottom-image {
     max-width: 330px;
     height: auto;
     border-radius: 15px;
-    border: none;
 }
 
 .instagram-card {
-    width: 100%;
-    height: 321px;
+    width: 300px;
+    height: auto;
     background-color: white;
     border-radius: 30px;
     text-align: center;
-    padding: 3rem 2rem 2rem 2rem;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional for shadow effect */
-    border: 1px solid #e5e5e5; /* Border around the Instagram card */
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e5e5;
 }
-@media (max-width: 768px) {
-.instagram-card {
-    width: 100%;
-    height: 321px;
-}
-}
-
 
 .instagram-icon {
     width: 51px;
     height: 51px;
-    fill: #000;
     margin-bottom: 10px;
 }
 
 .instagram-text {
-    font-size: 53px;
+    font-size: 24px;
     font-weight: 600;
-    color:  #3F1063;
-    width: 58%;
-    margin: auto;
+    color: #3F1063;
     font-family: 'HV';
-}
-@media (max-width: 768px) {
-    .instagram-text {
-    font-size: 14px;
-    width: 180px;
-    }
+    margin-bottom: 0.5rem;
 }
 
 .instagram-handle {
     font-family: 'MO';
-    font-size: 17px;
+    font-size: 14px;
     color: #3F1063;
-    margin-top: 10px;
 }
 
 .svg-icon {
@@ -140,23 +88,42 @@
     height: 30px;
 }
 
-.top-left-2 {
-    top: 22%;
-    left: 4%;
-    background-size: cover;
-    scale: 1.5;
-}
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .fifth-section {
+        padding-top: 2rem;
+    }
 
-.top-right {
-    top: 5%;
-    right: 5%;
-    background-size: cover;
-    scale: 1.5;
-}
+    .fifth_content {
+        padding: 1rem;
+    }
 
-.bottom-right {
-    bottom: 24%;
-    right: 4%;
-    background-size: cover;
-    scale: 1.5;
+    .top-row, .bottom-row {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .top-image, .bottom-image {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .instagram-card {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .instagram-text {
+        font-size: 18px;
+    }
+
+    .instagram-handle {
+        font-size: 12px;
+    }
+
+    .svg-icon {
+        width: 20px;
+        height: 20px;
+    }
 }
