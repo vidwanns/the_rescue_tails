@@ -140,6 +140,18 @@
     color: #2b534a;
 }
 
+.dog-women-image {
+    display: none;
+}
+@media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+    .dog-women-image {
+        display: block;
+        margin: auto;
+        scale: .8;
+        padding-bottom: 40px;
+    }
+  }
+
 .large-text {
     display: flex;
     justify-content: center;
@@ -153,6 +165,11 @@
 .large-text span {
     font-size: 120px;
 }
+@media (max-width: 768px) {
+    .large-text span {
+        font-size: 35px;
+    }
+}
 
 .image-box {
     width: 315px;
@@ -160,13 +177,22 @@
     border-radius: 50px;
     overflow: hidden;
 }
+@media (max-width: 768px) {
+    .image-box {
+        display: none;
+    }
+}
 
 .image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-
+}
+@media (max-width: 768px) {
+    .image-box img {
+        display: none;
+    }
 }
 
 .description-text {
@@ -175,6 +201,16 @@
     color: #2b534a;
     margin: 30px auto;
     max-width: 680px;
+}
+@media (max-width: 768px) {
+    .description-text {
+        font-family: 'HV';
+        font-size: 19px;
+        color: #2b534a;
+        margin: 30px auto;
+        width: 380px;
+        line-height: 1.5;
+    }
 }
 
 .cta-button {
@@ -200,6 +236,11 @@
     text-align: center;
     scale: 1;
 }
+@media (max-width: 768px) {
+    .curved-decoration {
+        display: none;
+    }
+}
 
 .curved-decoration img {
     max-width: 100%;
@@ -213,6 +254,11 @@
     scale: 1;
     transform: rotate(180deg);
 }
+@media (max-width: 768px) {
+    .curved-decoration-2 {
+        display: none;
+    }
+}
 
 /* Heart SVG positioning */
 .svg-heart {
@@ -220,6 +266,14 @@
     top: 54%;
     right: 10%;
     scale: 1.5;
+}
+@media (max-width: 768px) {
+    .svg-heart {
+        position: absolute;
+        top: 40%;
+        right: 14%;
+        scale: 1;
+    }
 }
 
 .svg-heart img {
@@ -260,6 +314,11 @@
 .svg-paw-bottom-left img {
     width: 40px;
     height: auto;
+}
+@media (max-width: 768px) {
+    .svg-paw-bottom-left img {
+        display: none;
+    }
 }
 
 /* Paw SVG positioning for top-right */
