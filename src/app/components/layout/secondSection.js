@@ -7,25 +7,25 @@ import '../../styles/component/secondSection/secondSection.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const SecondSection = () => {
-  // useEffect(() => {
-  //   // Animate each span in .large-text similarly to text-content in FourthSection
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".main-title",
-  //       start: "top 80%",
-  //       end: "top 20%",
-  //       toggleActions: "play none none reset",
-  //     },
-  //   });
+  useEffect(() => {
+    // Animate each span in .large-text similarly to text-content in FourthSection
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".main-title",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none none reset",
+      },
+    });
 
-  //   tl.from(".large-text span", {
-  //     opacity: 0,
-  //     y: 30,
-  //     duration: 1,
-  //     ease: "power3.out",
-  //     stagger: 0.2,
-  //   });
-  // }, []);
+    tl.from(".large-text span", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+    });
+  }, []);
 
   return (
     <section className="second-section">
@@ -62,7 +62,7 @@ const SecondSection = () => {
         </div>
 
         <div className="main-title">
-        <img src="/images/secondSection/dogwomen.png" alt="Dogwomen" className="dog-women-image" />
+        <img src="/images/secondSection/dogwomen.png" alt="Doggirl" className="dog-women-image" />
 
           <div className="large-text">
             <span className="image-box">
