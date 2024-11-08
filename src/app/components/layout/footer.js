@@ -30,7 +30,7 @@ function Footer() {
                 <ul className="links-column">
                   <li>Home</li>
                   <li>Adopt</li>
-                  <li>Home</li>
+                  <li>Volunteer</li>
                 </ul>
                 <ul className="links-column2">
                   <li className="about">About Us</li>
