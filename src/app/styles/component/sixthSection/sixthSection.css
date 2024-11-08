@@ -24,7 +24,7 @@
 @media (max-width: 768px) {
 .outer-container {
     height: 600px;
-    padding-top: 50px;
+    padding-top: 10px;
     border-radius: 20px 20px 0 0;
 }
 }
@@ -60,6 +60,11 @@
     justify-content: space-between;
     align-items: center;
     z-index: 2;
+}
+@media (max-width: 768px) {
+.decorative-elements {
+    display: block;
+}
 }
 
 .left-text {
@@ -103,6 +108,11 @@
     justify-content: flex-end;
     position: relative;
 }
+@media (max-width: 768px) {
+    .right-svg {
+        scale: .3;
+    }
+    }
 
 /* Adjust dog SVG */
 .dog-svg {
@@ -115,7 +125,10 @@
 }
 @media (max-width: 768px) {
     .dog-svg {
-        display: none;
+    position: relative;
+    top: -300px;
+    left: 450px;
+    scale: 1.6;
     }
     }
 
@@ -129,10 +142,14 @@
     transform: translatey(-20px);
 }
 @media (max-width: 768px) {
-    .curve-line {
-        display: none;
+    .curve-line {        
+    position: relative;
+    top: -350px;
+    left: 400px;
+    scale: 2;
     }
     }
+
 
 .contact-image {
     position: absolute;
