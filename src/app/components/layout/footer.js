@@ -48,6 +48,26 @@ function Footer() {
                 <p>+999999999999</p>
                 <p>hello@gmail.com</p>
               </div>
+              <div className="footerMobile">
+                <p>Contact on:-</p>
+                <div className="contactInfo">
+                  <div className="email">
+                    <img
+                      src="/images/footer/mail-icon.png"
+                      alt="Email Icon"
+                      className="icon"
+                    />
+                    <span>hello@gmail.com</span>
+                  </div>
+                  <div className="social">
+                    <img
+                      src="/images/footer/x-icon-footer.png"
+                      alt="Social Icon"
+                      className="xicon"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Donate Button */}
