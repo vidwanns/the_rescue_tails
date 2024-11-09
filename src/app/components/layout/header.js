@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion"; // Import motion from framer-motion
 import Link from "next/link";
 import "../../styles/component/layout/header.css";
+import Nav from "./nav";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -45,6 +46,9 @@ const Header = () => {
   }, [isMobile, lastScrollY, scrollThreshold]);
 
   return (
+ <>
+    <Nav/>
+
     <motion.header
       className="header-container"
       initial={{ y: 0 }}
@@ -121,6 +125,7 @@ const Header = () => {
         )}
       </div>
     </motion.header>
+    </>
   );
 };
 
