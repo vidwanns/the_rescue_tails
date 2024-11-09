@@ -1,126 +1,33 @@
-"use client";
-import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import classes from '../../styles/component/layout/nav.module.css';
+import '../../styles/component/layout/nav.css'; // Updated CSS import
 
-const Nav = () => {
-  const [navOpen, setNavOpen] = useState(false);
-  const navRef = useRef(null);
-
-  const handleOutsideClick = (event) => {
-    if (navRef.current && !navRef.current.contains(event.target)) {
-      setNavOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    if (navOpen) {
-      document.addEventListener("mousedown", handleOutsideClick);
-    } else {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [navOpen]);
-
-  const handleLinkClick = (sectionId) => {
-    setNavOpen(false);
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+const Nav = ({ isOpen, closeMenu }) => {
   return (
-    <div className={classes.nav} ref={navRef}>
-      <div className={classes.navcontainer}>
-        <div className={classes.navbar}>
-          <div
-            className={classes.menu_toggle}
-            onClick={() => setNavOpen(!navOpen)}
-          >
-            {!navOpen ? (
-              <svg
-                width="35"
-                height="12"
-                viewBox="0 0 35 12"
-                xmlns="http://www.w3.org/2000/svg"
-                className={classes.burger}
-              >
-                <g stroke="white">
-                  <g style={{ cursor: "pointer" }}>
-                    <path d="M0 2H17" />
-                    <path d="M0 6H17" />
-                    <path d="M0 10H9" />
-                  </g>
-                </g>
-              </svg>
-            ) : (
-              <svg
-                width="39"
-                height="25"
-                viewBox="0 0 39 25"
-                xmlns="http://www.w3.org/2000/svg"
-                className={classes.close}
-              >
-                <g stroke="#CBBD70">
-                  <path d="M6.137 18.157L18.158 6.136" />
-                  <path d="M18.867 18.157L6.846 6.136" />
-                </g>
-              </svg>
-            )}
-
-          </div>
-        </div>
-
-        <div
-          className={`${classes.nav_overlay} container`}
-          style={{ display: !navOpen ? "none" : "flex" }}
-        >
-          <ul className={` ${classes.nav_links}`}>
-            <li className={classes.nav_item}>
-              <div className={classes.title}>
-                <div className={classes.content}>
-                  <a
-                    className={classes.text}
-                    onClick={() => handleLinkClick("Home-section")}
-                  >
-                    HOME
-                  </a>
-                  <a
-                    className={classes.text}
-                    onClick={() => handleLinkClick("AboutUs-section")}
-                  >
-                    ABOUT US
-                  </a>
-                  <a
-                    className={classes.text}
-                    onClick={() => handleLinkClick("service-section")}
-                  >
-                    SERVICES
-                  </a>
-                  <a
-                    className={classes.text}
-                    onClick={() => handleLinkClick("footer-section")}
-                  >
-                    LOCATION
-                  </a>
-                  <a
-                    className={classes.text}
-                    onClick={() => handleLinkClick("contact-section")}
-                  >
-                    CONTACT US
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+    <motion.div
+      className="custom-mobile-nav" // Updated unique class name
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      style={{ display: isOpen ? "block" : "none" }}
+    >
+      <div className="custom-close-icon" onClick={closeMenu}>
+        &times;
       </div>
-    </div>
+      <nav className="custom-nav-links">
+        <Link href="#home" passHref><div className="custom-nav-link">Home</div></Link>
+        <Link href="#about" passHref><div className="custom-nav-link">About Us</div></Link>
+        <Link href="#how-to-help" passHref><div className="custom-nav-link">How to Help</div></Link>
+        <Link href="#volunteer" passHref><div className="custom-nav-link">Volunteer</div></Link>
+        <Link href="#adopt" passHref><div className="custom-nav-link">Adopt</div></Link>
+        <Link href="#contacts" passHref><div className="custom-nav-link">Contacts</div></Link>
+        <Link href="#say-hello" passHref><div className="custom-nav-link">Say Hello!</div></Link>
+      </nav>
+      <div className="custom-buttons">
+        <div className="custom-button custom-donate-button">Donate</div>
+        <div className="custom-button custom-community-button">Community</div>
+      </div>
+    </motion.div>
   );
 };
 

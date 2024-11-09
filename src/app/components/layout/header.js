@@ -45,9 +45,11 @@ const Header = () => {
     };
   }, [isMobile, lastScrollY, scrollThreshold]);
 
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const toggleMenu = () => setIsNavOpen(!isNavOpen);
+
   return (
  <>
-    <Nav/>
 
     <motion.header
       className="header-container"
@@ -116,7 +118,7 @@ const Header = () => {
                 className="arrow-icon"
               />
             </motion.div>
-            <div className="menu-icon">
+            <div className="menu-icon"  onClick={toggleMenu}>
               <div></div>
               <div></div>
               <div></div>
@@ -125,6 +127,8 @@ const Header = () => {
         )}
       </div>
     </motion.header>
+    <Nav isOpen={isNavOpen} closeMenu={() => setIsNavOpen(false)} />
+
     </>
   );
 };
