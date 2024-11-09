@@ -116,54 +116,54 @@
     scale: 2;
 }
 
-
-/* Responsive Adjustments for Mobile */
 @media (max-width: 768px) {
     .fifth-section {
-        padding-top: 2rem;
-    }
-
-    .fifth_content {
-        padding: 1rem;
+        padding-top: 3rem;
     }
 
     .top-row, .bottom-row {
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+        width: 100%;
+        margin-bottom: 2rem;
     }
 
-    .top-image, .bottom-image {
-        max-width: 100%;
-        border-radius: 15px;
+    .top-image {
+        display: none;
+    }
+    .bottom-image {
+        max-width: 200px; /* Scale images down for mobile */
     }
 
     .instagram-card {
-        width: 90%;
-        padding: 1.5rem;
+        width: 100%; /* Full-width for smaller screens */
+        height: auto;
+        padding: 1rem;
     }
 
     .instagram-text {
-        font-size: 18px;
-        margin: auto;
-        width: 100%;
+        font-size: 36px; /* Reduce font size */
+        width: auto;
     }
 
     .instagram-handle {
-        font-size: 12px;
-    }
-
-    .instagram-icon {
-        width: 51px;
-        height: 51px;
-        margin-bottom: 10px;
-        margin-top: 60px;
+        font-size: 14px;
     }
 
     .svg-icon {
+        scale: 1.5; /* Reduce SVG scale */
+    }
+
+    .line-svg {
         display: none;
     }
-.line-svg {
-    display:none;
-}
+
+    .top-left-2,
+    .svg-icon.top-right,
+    .svg-icon.bottom-right {
+        display: none;
+    }
 }
