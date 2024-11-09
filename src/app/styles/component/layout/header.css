@@ -1,3 +1,4 @@
+/* Default styles for desktop */
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -11,13 +12,13 @@
   z-index: 1000;
   padding: 0 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .header_logo {
   display: flex;
   align-items: center;
   height: 100px;
-
 }
 
 .nav-links {
@@ -29,142 +30,104 @@
 
 .nav-links div {
   color: white;
-  font-family: 'MO';
+  font-family: 'MO', sans-serif;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
   transition: color 0.3s;
-  position: relative; /* Necessary for positioning the underline */
 }
 
 .nav-links div:hover {
-  color: #DFE6D0; /* Lighter color on hover */
+  color: #DFE6D0;
 }
-
-/* Underline effect */
-.nav-links div::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px; /* Position the underline just below the text */
-  width: 100%;
-  height: 2px; /* Thickness of the underline */
-  background-color:  #EE7331; /* Underline color */
-  transform: scaleX(0); /* Start with no underline */
-  transform-origin: right; /* Start animation from the right */
-  transition: transform 0.3s ease; /* Smooth animation */
-}
-
-.nav-links div:hover::after {
-  transform: scaleX(1); /* Expand underline on hover */
-  transform-origin: left; /* Animate from left to right */
-}
-
 
 .buttons-container {
   display: flex;
   gap: 25px;
-  justify-content: center; /* Center buttons in the container */
+  justify-content: center;
 }
 
-.button {
-  position: relative; /* Position relative to allow for the overlay */
-  display: inline-flex;
-  align-items: center; /* Align text and icon */
+.button.contact, .button.donate-desktop {
   padding: 15px 30px;
   border-radius: 30px;
-  font-family: 'MO', sans-serif !important; 
+  font-family: 'MO', sans-serif;
   font-weight: 400;
   font-size: 16px;
+  color: white;
   cursor: pointer;
-  text-align: center;
-  overflow: hidden; /* Prevent overflow of the overlay */
-  transition: color 0.3s ease; /* Smooth text color transition */
-  color: white; /* Initial text color */
 }
 
 .button.contact {
   background-color: #DFE6D0;
-  color: #3A3935; /* Initial text color for contact button */
-  font-weight: lighter;
+  color: #3A3935;
 }
 
 .button.contact:hover {
-  color: black; 
+  color: black;
 }
 
-.button.contact::after {
-  content: ''; /* Overlay for the contact button */
-  position: absolute; /* Position absolute to fill button */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  top: 0; /* Position at the top */
-  left: 0; /* Position at the left */
-  background: white; /* Overlay color */
-  transform: scaleX(0); /* Initial state (not visible) */
-  transform-origin: right; /* Animation starts from the right */
-  transition: transform 0.25s ease-out; /* Transition for scaling */
-  border-radius: 30px; /* Match button's border radius */
-  z-index: 0; /* Ensure overlay is behind the text */
-}
-
-.button.contact:hover::after {
-  transform: scaleX(1); /* Scale overlay to full width on hover */
-  transform-origin: left; /* Animation ends at the left */
-}
-
-.button.donate {
-  font-weight: 100 !important;
-  letter-spacing: .5px;
+.button.donate-desktop {
   background-color: #EE7331;
-  display: flex;
-  align-items: center; /* Center content vertically */
-  position: relative; /* Allow for absolute positioning of overlay */
 }
 
-.button.donate::after {
-  content: ''; /* Overlay for the donate button */
-  position: absolute; /* Position absolute to fill button */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  top: 0; /* Position at the top */
-  left: 0; /* Position at the left */
-  background: white; /* Overlay color */
-  transform: scaleX(0); /* Initial state (not visible) */
-  transform-origin: right; /* Animation starts from the right */
-  transition: transform 0.25s ease-out; /* Transition for scaling */
-  border-radius: 30px; /* Match button's border radius */
-  z-index: 0; /* Ensure overlay is behind the text */
-}
-
-.button.donate:hover::after {
-  transform: scaleX(1); /* Scale overlay to full width on hover */
-  transform-origin: left; /* Animation ends at the left */
-}
-
-.button.donate:hover {
-  background-color: #d9611f; /* Slightly darker background on hover */
-  color: #EB7231; /* Change text color on hover */
+.button.donate-desktop:hover {
+  background-color: #d9611f;
 }
 
 .arrow-icon {
-  width: 11px; /* Adjust the size of the arrow */
-  height: auto;
-  display: inline-block;
-  margin-left: 9px; /* Add space between the text and the icon */
-  transition: filter 0.3s ease, transform 0.3s ease; /* Transition for both color and movement */
-  filter: brightness(0) saturate(100%) invert(100%); /* Initial arrow color */
-  z-index: 1; /* Ensure arrow icon is above the overlay */
+  width: 11px;
+  margin-left: 9px;
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-.button.donate:hover .arrow-icon {
-  filter: brightness(0) saturate(100%) invert(48%) sepia(66%) saturate(350%) hue-rotate(1deg) brightness(100%) contrast(102%); /* Change to the desired hover color */
-  transform: translateX(5px); /* Move arrow to the right on hover */
-}
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .header-container {
+    height: 60px;
+    padding: 0 15px;
+  }
 
-/* Ensuring text is above overlay */
-.button span {
-  position: relative; /* Position relative to ensure text is above overlay */
-  z-index: 1; /* Ensures text is above the overlay */
+  .nav-links, .buttons-container {
+    display: none;
+  }
+
+  .mobile-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .header_logo img {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+
+  .donate-mobile {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #EE7331;
+    color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+  }
+
+  .menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+
+  .donate-mobile:hover {
+    background-color: #d9611f;
+  }
 }
