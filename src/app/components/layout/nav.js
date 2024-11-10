@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import '../../styles/component/layout/nav.css'; // Updated CSS import
+import '../../styles/component/layout/nav.css';
 
 const Nav = ({ isOpen, closeMenu }) => {
   return (
@@ -11,13 +11,13 @@ const Nav = ({ isOpen, closeMenu }) => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       style={{ display: isOpen ? "block" : "none" }}
     >
-
-<div className="header_logo_nav">
-          <img src="/images/header/logo.svg" alt="The Rescue Tails Logo" />
-        </div>
-      <div className="custom-close-icon" onClick={closeMenu}>
-        &times;
+      <div className="header_logo_nav">
+        <img src="/images/header/logo.svg" alt="The Rescue Tails Logo" />
       </div>
+      <div className="custom-close-icon" onClick={closeMenu}>
+  <span>&times;</span>
+</div>
+
       <nav className="custom-nav-links">
         <div className="custom-nav-link-wrapper">
           <Link href="#home" passHref><div className="custom-nav-link">Home</div></Link>
@@ -42,8 +42,22 @@ const Nav = ({ isOpen, closeMenu }) => {
         </div>
       </nav>
       <div className="custom-buttons">
-        <div className="custom-button custom-donate-button">Donate</div>
-        <div className="custom-button custom-community-button">Community</div>
+        <div className="custom-button custom-donate-button">
+          Donate
+          <img
+            src="/images/header/arrow-up-right.svg"
+            alt="Arrow Icon"
+            className="arrow-icon"
+          />
+        </div>
+        <div className="custom-button custom-community-button">
+          Community
+          <img
+            src="/images/header/arrow-up-right.svg"
+            alt="Arrow Icon"
+            className="arrow-icon"
+          />
+        </div>
       </div>
     </motion.div>
   );

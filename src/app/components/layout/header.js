@@ -49,48 +49,66 @@ const Header = () => {
   const toggleMenu = () => setIsNavOpen(!isNavOpen);
 
   return (
- <>
+    <>
+      <motion.header
+        className="header-container"
+        initial={{ y: 0 }}
+        animate={{ y: isVisible ? 0 : -100 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        style={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}
+      >
+        <div className="maincontainer header-container">
+          <div className="header_logo">
+            <img src="/images/header/logo.svg" alt="The Rescue Tails Logo" />
+          </div>
 
-    <motion.header
-      className="header-container"
-      initial={{ y: 0 }}
-      animate={{ y: isVisible ? 0 : -100 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      style={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}
-    >
-      <div className="maincontainer header-container">
-        <div className="header_logo">
-          <img src="/images/header/logo.svg" alt="The Rescue Tails Logo" />
-        </div>
+          {/* Desktop Navigation Links and Buttons */}
+          {!isMobile && (
+            <>
+              <nav className="nav-links">
+                <Link href="#home" passHref>
+                  <div>Home</div>
+                </Link>
+                <Link href="#about" passHref>
+                  <div>About</div>
+                </Link>
+                <Link href="#community" passHref>
+                  <div>Community</div>
+                </Link>
+                <Link href="#volunteer" passHref>
+                  <div>Volunteer</div>
+                </Link>
+                <Link href="#adopt" passHref>
+                  <div>Adopt</div>
+                </Link>
+              </nav>
 
-        {/* Desktop Navigation Links and Buttons */}
-        {!isMobile && (
-          <>
-            <nav className="nav-links">
-              <Link href="#home" passHref>
-                <div>Home</div>
-              </Link>
-              <Link href="#about" passHref>
-                <div>About</div>
-              </Link>
-              <Link href="#community" passHref>
-                <div>Community</div>
-              </Link>
-              <Link href="#volunteer" passHref>
-                <div>Volunteer</div>
-              </Link>
-              <Link href="#adopt" passHref>
-                <div>Adopt</div>
-              </Link>
-            </nav>
+              <div className="buttons-container">
+                <motion.div className="button contact" whileHover={{ scale: 1.05 }}>
+                  <span>Contact Us</span>
+                </motion.div>
 
-            <div className="buttons-container">
-              <motion.div className="button contact" whileHover={{ scale: 1.05 }}>
-                <span>Contact Us</span>
-              </motion.div>
+                <motion.div
+                  className="button donate-desktop" /* Unique class for desktop Donate button */
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <span>Donate</span>
+                  <img
+                    src="/images/header/arrow-up-right.svg"
+                    alt="Arrow Icon"
+                    className="arrow-icon"
+                  />
+                </motion.div>
+              </div>
+            </>
+          )}
 
+          {/* Mobile Donate Button and Hamburger Menu */}
+          {isMobile && (
+            <div className="mobile-buttons">
+              {/* Mobile Donate Button */}
               <motion.div
-                className="button donate-desktop" /* Use a unique class for desktop Donate button */
+                className="button donate-mobile"
                 whileHover={{ scale: 1.05 }}
               >
                 <span>Donate</span>
@@ -100,35 +118,17 @@ const Header = () => {
                   className="arrow-icon"
                 />
               </motion.div>
-            </div>
-          </>
-        )}
 
-        {/* Mobile Donate Button and Hamburger Menu */}
-        {isMobile && (
-          <div className="mobile-buttons">
-            <motion.div
-              className="button donate-mobile" /* Use a unique class for mobile Donate button */
-              whileHover={{ scale: 1.05 }}
-            >
-              <span>Donate</span>
-              <img
-                src="/images/header/arrow-up-right.svg"
-                alt="Arrow Icon"
-                className="arrow-icon"
-              />
-            </motion.div>
-            <div className="menu-icon"  onClick={toggleMenu}>
-              <div></div>
-              <div></div>
-              <div></div>
+              <div className="menu-icon" onClick={toggleMenu}>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-    </motion.header>
-    <Nav isOpen={isNavOpen} closeMenu={() => setIsNavOpen(false)} />
-
+          )}
+        </div>
+      </motion.header>
+      <Nav isOpen={isNavOpen} closeMenu={() => setIsNavOpen(false)} />
     </>
   );
 };

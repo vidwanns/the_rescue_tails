@@ -12,7 +12,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
 
@@ -21,6 +20,8 @@
   align-items: center;
   scale: .8;
   padding-bottom: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 
@@ -28,10 +29,32 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 24px;
+  width: 50px;
+  height: 50px; 
+  background-color: #d1eceb; 
+  color: #002d00; 
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  color: #fff;
+  border-radius: 0 0 15px 0 ; /* Rounded corners */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+  font-weight: lighter; /* Make "X" bold */
 }
+
+.custom-close-icon span {
+  position: relative;
+  top: 0; /* Move the "X" 5px up */
+  font-weight: 300; /* Use a specific weight */
+  opacity: 0.8; /* Optional: make the X symbol slightly translucent */
+  font-family: 'Arial, sans-serif'; /* Optionally change the font family */
+}
+
+.custom-close-icon:hover {
+  background-color: #b3d9d8; /* Slightly darker color on hover */
+}
+
 
 .custom-nav-links {
   display: flex;
@@ -64,7 +87,7 @@
   bottom: 0;
   width: 100vw; /* Full viewport width */
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.2); /* Color of the underline */
+  background-color: #789C55; /* Color of the underline */
   transform: translateX(-20px); /* Start underline from the screen edge */
 }
 
@@ -72,11 +95,14 @@
 .custom-buttons {
   display: flex;
   gap: 0; /* Remove gap to have a consistent border */
-  margin-top: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Border around the container */
+  margin-top: 80px;
+  border-top: 1px solid #789C55; /* Top border line */
+  border-bottom: 1px solid #789C55; /* Bottom border line */
 }
 
+
 .custom-button {
+  font-family: 'MO';
   font-size: 20px;
   font-weight: 400;
   color: #ff9d00; /* Orange color for text */
@@ -85,15 +111,22 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 10px 20px;
+  padding: 26px 20px;
   text-decoration: none; /* Remove default underline */
   flex: 1; /* Make buttons take equal space */
   background-color: transparent;
   border: none;
 }
 
+.arrow-icon {
+  margin-left: 8px; /* Spacing between text and icon */
+  width: 18px; /* Adjust size as needed */
+  height: 18px;
+  scale: .6;
+}
+
+
 .custom-button::after {
-  content: "→"; /* Arrow symbol */
   margin-left: 5px; /* Spacing between text and arrow */
   color: #ffffff; /* White color for the arrow */
   font-size: 18px;
@@ -110,5 +143,5 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  background-color: rgba(255, 255, 255, 0.2); /* Vertical divider line */
+  background-color: #789C55; /* Vertical divider line */
 }
