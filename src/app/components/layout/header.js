@@ -84,7 +84,10 @@ const Header = () => {
               </nav>
 
               <div className="buttons-container">
-                <motion.div className="button contact" whileHover={{ scale: 1.05 }}>
+                <motion.div
+                  className="button contact"
+                  whileHover={{ scale: 1.05 }}
+                >
                   <span>Contact Us</span>
                 </motion.div>
 

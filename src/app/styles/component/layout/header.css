@@ -105,28 +105,44 @@
   }
 
   .donate-mobile {
-    padding: 10px 20px;
-    font-size: 14px;
+    padding: 15px 30px;
+    font-size: 17px;
+    font-family: 'MO';
     background-color: #EE7331;
     color: white;
-    border-radius: 30px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
+    margin-right: 30px;
   }
 
   .menu-icon {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    gap: 4px;
+    gap: 6px; /* Increase the gap for spacing between lines */
   }
-
+  
   .menu-icon div {
-    width: 25px;
-    height: 3px;
     background-color: white;
+    height: 3px;
+    border-radius: 2px; /* Rounded edges for each line */
+    margin-left: auto; /* Align each line to the right */
   }
-
+  
+  /* Customize the width for each line */
+  .menu-icon div:nth-child(1) {
+    width: 25px; /* Top line full width */
+  }
+  
+  .menu-icon div:nth-child(2) {
+    width: 20px; /* Middle line shorter */
+  }
+  
+  .menu-icon div:nth-child(3) {
+    width: 15px; /* Bottom line shortest */
+  }
+  
   .donate-mobile:hover {
     background-color: #d9611f;
   }
