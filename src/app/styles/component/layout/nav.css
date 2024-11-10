@@ -15,6 +15,15 @@
   padding: 20px;
 }
 
+
+.header_logo_nav img{
+  display: flex;
+  align-items: center;
+  scale: .8;
+  padding-bottom: 30px;
+}
+
+
 .custom-close-icon {
   position: absolute;
   top: 20px;
@@ -31,47 +40,75 @@
   align-items: center;
 }
 
-.custom-nav-link {
-  font-size: 24px;
-  font-weight: 300;
-  text-align: center;
-  cursor: pointer;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Thin line between links */
+.custom-nav-link-wrapper {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  padding-left: 20px; /* Offset text by 20px from the left */
+  box-sizing: border-box; /* Ensure padding does not affect width */
 }
 
-.custom-nav-link:hover {
-  color: #ff9d00; /* Optional hover color */
+.custom-nav-link {
+  font-size: 42px;
+  font-family: 'HV';
+  font-weight: lighter;
+  text-align: start;
+  cursor: pointer;
+  padding: 10px 0;
+  position: relative;
 }
+
+.custom-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw; /* Full viewport width */
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2); /* Color of the underline */
+  transform: translateX(-20px); /* Start underline from the screen edge */
+}
+
 
 .custom-buttons {
   display: flex;
-  gap: 15px;
+  gap: 0; /* Remove gap to have a consistent border */
   margin-top: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Border around the container */
 }
 
 .custom-button {
-  padding: 10px 20px;
   font-size: 20px;
   font-weight: 400;
-  border: 1px solid #ff9d00; /* Orange border for buttons */
-  color: #ff9d00;
-  border-radius: 5px;
+  color: #ff9d00; /* Orange color for text */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.custom-donate-button {
-  background-color: #ff9d00; /* Orange background for donate */
-  color: #002d00; /* Text color for donate button */
-}
-
-.custom-community-button {
+  position: relative;
+  padding: 10px 20px;
+  text-decoration: none; /* Remove default underline */
+  flex: 1; /* Make buttons take equal space */
   background-color: transparent;
+  border: none;
 }
 
-.custom-donate-button:hover, .custom-community-button:hover {
-  opacity: 0.9;
+.custom-button::after {
+  content: "→"; /* Arrow symbol */
+  margin-left: 5px; /* Spacing between text and arrow */
+  color: #ffffff; /* White color for the arrow */
+  font-size: 18px;
+}
+
+.custom-button:hover {
+  color: #ff9d00;
+}
+
+.custom-button:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.2); /* Vertical divider line */
 }
