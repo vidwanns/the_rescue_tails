@@ -64,6 +64,7 @@
 @media (max-width: 768px) {
 .decorative-elements {
     display: block;
+    height: 100px;
 }
 }
 
