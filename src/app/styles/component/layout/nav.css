@@ -103,7 +103,7 @@
   font-family: 'MO';
   font-size: 20px;
   font-weight: 400;
-  color: #ff9d00; /* Orange color for text */
+  color: #EE7331; /* Orange color for text */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -113,7 +113,7 @@
   text-decoration: none; /* Remove default underline */
   background-color: transparent;
   border: 1px solid #789C55; /* Outline color */
-  border-radius: 4px; /* Adjust if rounded corners are needed */
+  border-radius: 6px; /* Adjust if rounded corners are needed */
   transition: all 0.3s ease; /* Smooth transition for hover effect */
   max-width: 150px; /* Set a maximum width */
   flex: 0; /* Prevent buttons from expanding to take up equal space */
@@ -145,12 +145,3 @@
   color: #ff9d00;
 }
 
-.custom-button:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: #789C55; /* Vertical divider line */
-}
