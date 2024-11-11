@@ -59,7 +59,7 @@
 .custom-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .custom-nav-link {
-  font-size: 42px;
+  font-size: 38px;
   font-family: 'HV';
   font-weight: lighter;
   text-align: start;
@@ -95,9 +95,7 @@
 .custom-buttons {
   display: flex;
   gap: 0; /* Remove gap to have a consistent border */
-  margin-top: 80px;
-  border-top: 1px solid #789C55; /* Top border line */
-  border-bottom: 1px solid #789C55; /* Bottom border line */
+  margin-top: 40px;
 }
 
 
@@ -111,12 +109,23 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 26px 20px;
+  padding: 12px 20px;
   text-decoration: none; /* Remove default underline */
-  flex: 1; /* Make buttons take equal space */
   background-color: transparent;
-  border: none;
+  border: 1px solid #789C55; /* Outline color */
+  border-radius: 4px; /* Adjust if rounded corners are needed */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  max-width: 150px; /* Set a maximum width */
+  flex: 0; /* Prevent buttons from expanding to take up equal space */
+  margin: 0 auto;
 }
+
+
+.custom-button:hover {
+  color: #ff9d00;
+  border-color: #ff9d00; /* Change outline color on hover */
+}
+
 
 .arrow-icon {
   margin-left: 8px; /* Spacing between text and icon */

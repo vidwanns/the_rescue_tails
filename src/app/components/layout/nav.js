@@ -51,7 +51,7 @@ const Nav = ({ isOpen, closeMenu }) => {
           />
         </div>
         <div className="custom-button custom-community-button">
-          Community
+          Contact
           <img
             src="/images/header/arrow-up-right.svg"
             alt="Arrow Icon"
