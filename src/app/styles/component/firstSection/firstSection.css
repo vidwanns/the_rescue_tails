@@ -40,9 +40,10 @@
 @media (max-width: 768px) {
 
     .first-section {
-        padding-top: 140px;
+        padding-top: 100px;
         padding-left: 30px;
         padding-right: 30px;
+        padding-bottom: 20px;
     }
 
     .first-section-title {
@@ -79,24 +80,27 @@
 }
 
 .donate-section {
-    margin-top: 60px;
     display: flex;
     justify-content: center;
-    /* Center the donate button */
     align-items: flex-start;
-    /* Align items at the start of the container */
-    gap: 20px;
-    /* Space between left section and button */
+}
+@media (max-width: 768px) {
+    .donate-section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-right: 25px;
+    }
 }
 
 .left-align {
     display: flex;
     flex-direction: column;
-    /* Stack the text and icon vertically */
     align-items: flex-start;
-    /* Align items to the left */
     gap: 5px;
-    /* Space between the text and the arrow */
+    scale: .8;
+    margin-top: 20px;
+    margin-left: -60px;
 }
 
 .curved-arrow-icon-2 {
@@ -140,7 +144,7 @@
 
 
 .donate-button {
-    padding: 25px 60px;
+    padding: 20px 50px;
     /* Inner padding for the button */
     background-color: #ff7e42;
     /* Original background color */
@@ -225,8 +229,8 @@
 }
 @media (max-width: 768px) {
     .paw-icon.right {
-        right: 6%;
-        top: 18%;
+        right: 9%;
+        top: 16%;
         width: 50px;
         height: 50px;
         scale: 0.6;
@@ -240,7 +244,7 @@
 
 @media (max-width: 768px) {
     .bone-icon {
-        top: 16.5%;
+        top: 13.5%;
         left: -1%;
         scale: .25;
     }
@@ -279,7 +283,12 @@
 }
 @media (max-width: 768px) {
 .curved-arrow-icon {
-    scale: 2;
+    scale: 1.5;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 100px;
+    left: 0px;
 }
 }
 
