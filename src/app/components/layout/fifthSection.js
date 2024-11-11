@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/component/fifthSection/fifthSection.css';
@@ -6,12 +6,13 @@ import '../../styles/component/fifthSection/fifthSection.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const FifthSection = () => {
+  const bottomRowRef = useRef(null);
+
   useEffect(() => {
     const mm = gsap.matchMedia();
 
     // Desktop Animation
     mm.add("(min-width: 992px)", () => {
-      // Initial setup for scattered effect on images
       gsap.set(".top-image, .bottom-image", {
         x: () => gsap.utils.random(-300, 300),
         y: () => gsap.utils.random(-300, 300),
@@ -20,7 +21,6 @@ const FifthSection = () => {
         rotation: () => gsap.utils.random(-30, 30),
       });
 
-      // Main timeline for images and text
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".fifth-section",
@@ -30,7 +30,6 @@ const FifthSection = () => {
         },
       });
 
-      // Animate images into place with bounce
       tl.to(".top-image, .bottom-image", {
         x: 0,
         y: 0,
@@ -42,16 +41,14 @@ const FifthSection = () => {
         ease: "elastic.out(1, 0.5)",
       });
 
-      // Fade-in effect for Instagram card text with stagger
       tl.from(".instagram-text, .instagram-handle", {
         opacity: 0,
         y: 20,
         duration: 0.8,
         stagger: 0.3,
         ease: "power3.out",
-      }, "-=0.5"); // Overlap with previous animation
+      }, "-=0.5");
 
-      // Icon rotation effect
       gsap.to(".svg-icon", {
         scrollTrigger: {
           trigger: ".fifth-section",
@@ -66,7 +63,6 @@ const FifthSection = () => {
       });
     });
 
-    // Cleanup ScrollTrigger instances on unmount
     return () => {
       mm.revert();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -90,7 +86,8 @@ const FifthSection = () => {
           </div>
           <img src="/images/fifthSection/nb-girl6.png" alt="Woman with dog" className="top-image" />
         </div>
-        <div className="bottom-row">
+        
+        <div className="bottom-row" ref={bottomRowRef}>
           <img src="/images/fifthSection/nb-girl2.png" alt="Woman with coffee and dog" className="bottom-image" />
           <img src="/images/fifthSection/nb-girl3.png" alt="Cat being pet" className="bottom-image" />
           <img src="/images/fifthSection/nb-girl4.png" alt="Dog paw in hand" className="bottom-image" />

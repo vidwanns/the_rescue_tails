@@ -105,16 +105,16 @@
   }
 
   .donate-mobile {
-    padding: 15px 30px;
+    padding: 10px 20px;
     font-size: 17px;
     font-family: 'MO';
     background-color: #EE7331;
     color: white;
-    border-radius: 15px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     margin-right: 30px;
-  }
+}
 
   .menu-icon {
     display: flex;
@@ -125,7 +125,7 @@
   
   .menu-icon div {
     background-color: white;
-    height: 3px;
+    height: 2px;
     border-radius: 2px; /* Rounded edges for each line */
     margin-left: auto; /* Align each line to the right */
   }
