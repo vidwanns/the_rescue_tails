@@ -8,17 +8,31 @@
 .button-group {
   display: flex;
   gap: 15px;
-  margin-bottom: 20px;
+  overflow: hidden;
 }
+
 @media (max-width: 768px) {
   .button-group {
-    display: flex;
+    transform: translateX(50px);
+    transition: transform 0.3s ease;
     gap: 15px;
     margin-bottom: 20px;
-    margin-left: -50px;
-    scale: .8;
+    scale: 0.8;
   }
+
+  /* On mobile, the container itself should be scrollable */
+  .button-group-wrapper {
+    overflow-x: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .button-group-wrapper {
+      overflow-x: auto;
+    }
+  }
+  
 }
+
 
 .help-button {
   display: flex;

@@ -1,11 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
+import { useSwipeable } from 'react-swipeable';
 import pet from "../../../../public/jai_ho.json";
 import "../../styles/component/thirdSection/thirdSection.css";
 
 const ThirdSection = () => {
+  const [translateX, setTranslateX] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
   // Framer Motion Variants
   const floatVariant = {
     animate: { y: [0, -10, 0], transition: { duration: 3, repeat: Infinity, ease: "easeInOut" } }
@@ -15,6 +19,22 @@ const ThirdSection = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
+
+  // Check if the screen width is mobile size on component mount and resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize(); // Run initially
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Configure swipe handlers for mobile screens only
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => setTranslateX(prev => Math.max(prev - 100, -200)),
+    onSwipedRight: () => setTranslateX(prev => Math.min(prev + 100, 0)),
+    trackMouse: true,
+    preventScrollOnSwipe: true
+  });
 
   return (
     <section className="third-section">
@@ -56,23 +76,31 @@ const ThirdSection = () => {
             things help enable the rescue to expand their network and help more dogs in need.
           </motion.p>
 
-          <div className="button-group">
-            {[
-              { text: "Adopt", icon: "/images/ThirdSection/fox1.svg" },
-              { text: "Foster", icon: "/images/ThirdSection/home2.svg" },
-              { text: "Volunteer", icon: "/images/ThirdSection/food_volunteer.png" },
-              { text: "Donate", icon: "/images/ThirdSection/hand4.svg" }
-            ].map((btn, index) => (
-              <motion.button
-                key={index}
-                className={`help-button ${btn.text.toLowerCase()}`}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <img src={btn.icon} alt={`${btn.text} Icon`} className="button-icon" />
-                {btn.text}
-              </motion.button>
-            ))}
+          <div className="button-group-wrapper" {...(isMobile ? swipeHandlers : {})} style={{ overflowX: "hidden" }}>
+            <div
+              className="button-group"
+              style={{
+                transform: `translateX(${translateX}px)`,
+                transition: "transform 0.3s ease"
+              }}
+            >
+              {[
+                { text: "Adopt", icon: "/images/ThirdSection/fox1.svg" },
+                { text: "Foster", icon: "/images/ThirdSection/home2.svg" },
+                { text: "Volunteer", icon: "/images/ThirdSection/food_volunteer.png" },
+                { text: "Donate", icon: "/images/ThirdSection/hand4.svg" }
+              ].map((btn, index) => (
+                <motion.button
+                  key={index}
+                  className={`help-button ${btn.text.toLowerCase()}`}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <img src={btn.icon} alt={`${btn.text} Icon`} className="button-icon" />
+                  {btn.text}
+                </motion.button>
+              ))}
+            </div>
           </div>
 
           <motion.p className="adoption-info" variants={fadeInVariant}>
@@ -96,13 +124,12 @@ const ThirdSection = () => {
             See How Your Donation <span className="highlight">Transforms</span> Lives!
           </motion.h3>
           <div className="donation-journey">
-          <Lottie
-  animationData={pet}
-  loop={true}
-  className="lottie-animation"
-  style={{ position: "absolute" }}
-/>
-
+            <Lottie
+              animationData={pet}
+              loop={true}
+              className="lottie-animation"
+              style={{ position: "absolute" }}
+            />
           </div>
         </div>
       </motion.div>
