@@ -4,32 +4,33 @@
   position: relative;
 }
 
-/* Button Group */
+.button-group-wrapper {
+  overflow-x: hidden; /* Prevents scrolling on desktop */
+  padding: 0;
+  margin: 0;
+}
+
 .button-group {
   display: flex;
   gap: 15px;
-  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-  .button-group {
-    transform: translateX(50px);
-    transition: transform 0.3s ease;
-    gap: 15px;
-    scale: 0.8;
+  .button-group-wrapper {
+    overflow-x: auto; /* Allows horizontal scrolling only on mobile */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
   }
 
-  /* On mobile, the container itself should be scrollable */
-  .button-group-wrapper {
-    overflow-x: hidden;
+  .button-group {
+    display: inline-flex; /* Helps align buttons correctly in a scrollable container */
+    gap: 15px;
+    scale: .9;
+    transform: translateX(0); /* Start at the beginning of the container */
+    padding: 0;
+    margin-left: -20px;
   }
-  
-  @media (max-width: 768px) {
-    .button-group-wrapper {
-      overflow-x: auto;
-    }
-  }
-  
 }
 
 
