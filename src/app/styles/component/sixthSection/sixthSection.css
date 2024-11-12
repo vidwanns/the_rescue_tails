@@ -191,14 +191,14 @@
 }
 @media (max-width: 768px) {
     .contact-form {
-        position: fixed;
+        position: absolute;
         transform: scale(0.7);
-        right: -62px;
-        width: 554px;
-        max-width: 630px;
+        right: 0;
+        left: 0;
+        max-width: 100%;
+        margin-left: 0;
     }
 }
-
 
 .contact-form h3 {
     font-family: 'HV';

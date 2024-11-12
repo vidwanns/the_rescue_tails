@@ -263,7 +263,7 @@
         height: 2px;
         background-color: #93B579;
         margin: auto;
-        margin-top: 300px;
+        margin-top: 200px;
     }
     /* Center align contact information */
     .footer-contact {
@@ -272,14 +272,15 @@
 
     .text-wrapper {
         justify-content: center;
-        /* align-items: center; */
+        flex-direction: column;
+        align-items: center;
         padding-right: 0;
     }
 
     /* Text at the bottom */
     .text-left-corner {
         position: absolute;
-        font-size: 1.2rem;
+        font-size: 28px;
         line-height: 1.5;
         text-align: start;
         margin-bottom: 0;
@@ -290,7 +291,7 @@
     /* Position Donate button at bottom-right */
     .footer-donate {
         position: absolute;
-        bottom: 20px;
+        bottom: 100px;
         right: 20px;
         display: flex;
         justify-content: center;
@@ -305,21 +306,22 @@
 
     /* mobile contact form */
     .footerMobile {
-        display: block;
-        margin-top: 400px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
         justify-content: center;
         text-align: center;
-        color: #d9e0d8; 
-        font-family: 'MO';  
+        color: #d9e0d8;
+        font-family: 'MO';
         font-weight: bold;
     }
       
-      .contactInfo {
+    .contactInfo {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px; /* Adjust spacing as needed */
-      }
+        gap: 10px;
+    }
       
       .email,
       .social {
