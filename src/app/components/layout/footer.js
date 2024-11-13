@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/component/layout/footer.css";
-import dynamic from "next/dynamic";
 
 function Footer() {
-  const Footer = dynamic(() => import("../../styles/component/layout/footer.css"), { ssr: false });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if window is available to avoid SSR issues
+    if (typeof window !== "undefined") {
+      const handleResize = () => setIsMobile(window.innerWidth <= 768);
+      handleResize(); // Set initial value on mount
+      window.addEventListener("resize", handleResize);
+
+      // Cleanup event listener on unmount
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   const handleDonateClick = () => {
     console.log("Donate button clicked");
   };

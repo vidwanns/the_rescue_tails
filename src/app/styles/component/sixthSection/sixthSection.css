@@ -6,8 +6,8 @@
 }
 @media (max-width: 768px) {
 .sixth-section {
-    padding: 20px;
-    height: 600px;
+    padding: 20px 20px 0 20px;
+    height: 100%;
 }
 }
 
@@ -23,8 +23,8 @@
 }
 @media (max-width: 768px) {
 .outer-container {
-    height: 600px;
-    padding-top: 10px;
+    height: 900px;
+    padding-top: 95px;
     border-radius: 20px 20px 0 0;
 }
 }
@@ -176,7 +176,7 @@
 }
 @media (max-width: 768px) {
     .container1 {
-        height: 600px;
+        height: 750px;
     }
     }
 
@@ -192,11 +192,12 @@
 @media (max-width: 768px) {
     .contact-form {
         position: absolute;
-        transform: scale(0.7);
+        padding: 20px;
         right: 0;
         left: 0;
         max-width: 100%;
         margin-left: 0;
+        height: 100%;
     }
 }
 
