@@ -5,7 +5,7 @@ function Footer() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if window is available to avoid SSR issues
+    // Check if we're in the client environment before accessing `window`
     if (typeof window !== "undefined") {
       const handleResize = () => setIsMobile(window.innerWidth <= 768);
       handleResize(); // Set initial value on mount
