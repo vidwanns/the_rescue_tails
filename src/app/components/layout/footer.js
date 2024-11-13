@@ -4,17 +4,17 @@ import "../../styles/component/layout/footer.css";
 function Footer() {
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    // Check if we're in the client environment before accessing `window`
-    if (typeof window !== "undefined") {
-      const handleResize = () => setIsMobile(window.innerWidth <= 768);
-      handleResize(); // Set initial value on mount
-      window.addEventListener("resize", handleResize);
+  // useEffect(() => {
+  //   // Check if we're in the client environment before accessing `window`
+  //   if (typeof window !== "undefined") {
+  //     const handleResize = () => setIsMobile(window.innerWidth <= 768);
+  //     handleResize(); // Set initial value on mount
+  //     window.addEventListener("resize", handleResize);
 
-      // Cleanup event listener on unmount
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
+  //     // Cleanup event listener on unmount
+  //     return () => window.removeEventListener("resize", handleResize);
+  //   }
+  // }, []);
 
   const handleDonateClick = () => {
     console.log("Donate button clicked");
