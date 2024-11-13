@@ -1,9 +1,9 @@
-"use client";
-
 import React from "react";
 import "../../styles/component/layout/footer.css";
+import dynamic from "next/dynamic";
 
 function Footer() {
+  const Footer = dynamic(() => import("../../styles/component/layout/footer.css"), { ssr: false });
   const handleDonateClick = () => {
     console.log("Donate button clicked");
   };
