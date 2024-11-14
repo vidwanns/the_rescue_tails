@@ -41,7 +41,7 @@ const Nav = ({ isOpen, closeMenu }) => {
           <Link href="#say-hello" passHref><div className="custom-nav-link">Say Hello!</div></Link>
         </div>
       </nav>
-      <div className="custom-buttons">
+      {/* <div className="custom-buttons">
         <div className="custom-button custom-donate-button">
           Donate
           <img
@@ -58,7 +58,7 @@ const Nav = ({ isOpen, closeMenu }) => {
             className="arrow-icon"
           />
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 };
