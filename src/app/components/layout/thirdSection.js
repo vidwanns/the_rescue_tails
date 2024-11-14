@@ -12,10 +12,14 @@ const ThirdSection = () => {
 
   // Update mobile state on resize
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {  // Check if window is defined
+      const handleResize = () => setIsMobile(window.innerWidth <= 768);
+      handleResize();  // Set initial state
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
+  
 
   // Framer Motion Variants
   const floatVariant = {
@@ -34,13 +38,6 @@ const ThirdSection = () => {
     },
   };
 
-  // Check if the screen width is mobile size on component mount and resize
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize(); // Run initially
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // Configure swipe handlers for mobile screens only
   const swipeHandlers = useSwipeable({
