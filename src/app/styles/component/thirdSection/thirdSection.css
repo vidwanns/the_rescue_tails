@@ -391,12 +391,15 @@
 
 .donation-journey .lottie-animation {
   position: absolute;
-  left: -100px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 @media (max-width: 768px) {
   .donation-journey .lottie-animation {
     left: -20px; /* Shift to -20px for mobile */
+    margin-top: 20px;
   }
 }
 
