@@ -35,11 +35,36 @@
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
+  position: relative; /* Needed for the ::after pseudo-element */
   transition: color 0.3s;
+}
+
+.nav-links div::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  border-radius: 3px;
+  left: 0;
+  width: 100%; /* Full width of the underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #EE8370;
+  transform: scaleX(0); /* Start hidden with no width */
+  transform-origin: left; /* Grow from the left */
+  transition: transform 0.3s ease, transform-origin 0s; /* Smooth animation for the underline */
 }
 
 .nav-links div:hover {
   color: #DFE6D0;
+}
+
+.nav-links div:hover::after {
+  transform: scaleX(1); /* Expand underline fully on hover */
+  transform-origin: left; /* Keep growing from the left */
+}
+
+.nav-links div:not(:hover)::after {
+  transform: scaleX(0); /* Shrink underline */
+  transform-origin: right; /* Shrink to the right */
 }
 
 .buttons-container {
