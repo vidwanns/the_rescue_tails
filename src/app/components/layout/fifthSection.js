@@ -1,12 +1,13 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '../../styles/component/fifthSection/fifthSection.css';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "../../styles/component/fifthSection/fifthSection.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FifthSection = () => {
   const bottomRowRef = useRef(null);
+  const imagesRef = useRef([]);
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -41,13 +42,17 @@ const FifthSection = () => {
         ease: "elastic.out(1, 0.5)",
       });
 
-      tl.from(".instagram-text, .instagram-handle", {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        stagger: 0.3,
-        ease: "power3.out",
-      }, "-=0.5");
+      tl.from(
+        ".instagram-text, .instagram-handle",
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+          stagger: 0.3,
+          ease: "power3.out",
+        },
+        "-=0.5"
+      );
 
       gsap.to(".svg-icon", {
         scrollTrigger: {
@@ -65,33 +70,111 @@ const FifthSection = () => {
 
     return () => {
       mm.revert();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+  useEffect(() => {
+    const images = imagesRef.current;
+    const totalImages = images.length;
+    const duration = 4; // Duration each image stays fully visible
+    const transitionDuration = 1; // Duration of fade transition
 
+    images.forEach((img, i) => {
+      gsap.to(img, {
+        opacity: 1,
+        duration: transitionDuration,
+        delay: i * (duration + transitionDuration),
+        repeat: -1,
+        yoyo: true,
+        repeatDelay: (totalImages - 1) * (duration + transitionDuration),
+      });
+    });
+  }, []);
   return (
     <section className="fifth-section container">
-      <img src="/images/fifthSection/org-bone.svg" alt="Top Left Icon 2" className="svg-icon top-left-2" />
-      <img src="/images/fifthSection/bone.svg" alt="Top Right Icon" className="svg-icon top-right" />
-      <img src="/images/fifthSection/yellow-bone.svg" alt="Bottom Right Icon" className="svg-icon bottom-right" />
-      <img src="/images/fifthSection/lines.svg" alt="Line SVG" className="line-svg bottom-left" />
+      <img
+        src="/images/fifthSection/org-bone.svg"
+        alt="Top Left Icon 2"
+        className="svg-icon top-left-2"
+      />
+      <img
+        src="/images/fifthSection/bone.svg"
+        alt="Top Right Icon"
+        className="svg-icon top-right"
+      />
+      <img
+        src="/images/fifthSection/yellow-bone.svg"
+        alt="Bottom Right Icon"
+        className="svg-icon bottom-right"
+      />
+      <img
+        src="/images/fifthSection/lines.svg"
+        alt="Line SVG"
+        className="line-svg bottom-left"
+      />
 
       <div className="fifth_content">
         <div className="top-row">
-          <img src="/images/fifthSection/nb-girl1.png" alt="Woman with pets" className="top-image" />
+          <img
+            src="/images/fifthSection/nb-girl1.png"
+            alt="Woman with pets"
+            className="top-image"
+          />
           <div className="instagram-card">
-            <img src="/images/fifthSection/insrtagram-icon.svg" alt="instagram-icon" className="instagram-icon" />
+            <img
+              src="/images/fifthSection/insrtagram-icon.svg"
+              alt="instagram-icon"
+              className="instagram-icon"
+            />
             <p className="instagram-text">See more in our Instagram</p>
             <p className="instagram-handle">@headsfortails</p>
           </div>
-          <img src="/images/fifthSection/nb-girl6.png" alt="Woman with dog" className="top-image" />
+          <img
+            src="/images/fifthSection/nb-girl6.png"
+            alt="Woman with dog"
+            className="top-image"
+          />
         </div>
-        
+
         <div className="bottom-row" ref={bottomRowRef}>
-          <img src="/images/fifthSection/nb-girl2.png" alt="Woman with coffee and dog" className="bottom-image" />
-          <img src="/images/fifthSection/nb-girl3.png" alt="Cat being pet" className="bottom-image" />
-          <img src="/images/fifthSection/nb-girl4.png" alt="Dog paw in hand" className="bottom-image" />
-          <img src="/images/fifthSection/nb-girl5.png" alt="Dog in jacket" className="bottom-image" />
+          <img
+            src="/images/fifthSection/nb-girl2.png"
+            alt="Woman with coffee and dog"
+            className="bottom-image"
+          />
+          <img
+            src="/images/fifthSection/nb-girl3.png"
+            alt="Cat being pet"
+            className="bottom-image"
+          />
+          <img
+            src="/images/fifthSection/nb-girl4.png"
+            alt="Dog paw in hand"
+            className="bottom-image"
+          />
+          <img
+            src="/images/fifthSection/nb-girl5.png"
+            alt="Dog in jacket"
+            className="bottom-image"
+          />
+        </div>
+        <div className="fiftSecMob-images">
+          {[
+            "nb-girl2.png",
+            "nb-girl3.png",
+            "nb-girl4.png",
+            "nb-girl5.png",
+            "nb-girl6.png",
+            "nb-girl1.png",
+          ].map((src, index) => (
+            <img
+              key={index}
+              ref={(el) => (imagesRef.current[index] = el)}
+              src={`/images/fifthSection/${src}`}
+              alt={`Contact Image ${index + 1}`}
+              className="fiftSecMobImg"
+            />
+          ))}
         </div>
       </div>
     </section>
