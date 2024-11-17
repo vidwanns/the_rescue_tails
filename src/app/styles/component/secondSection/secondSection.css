@@ -130,7 +130,8 @@
 
 .main-content {
     margin-top: 50px;
-    height: 700px;
+    padding-bottom: 60px;
+    height: 100%;
 }
 
 .main-title {
@@ -208,7 +209,8 @@
         font-size: 19px;
         color: #2b534a;
         margin: 30px auto;
-        width: 380px;
+        width: 90%;
+
         line-height: 1.5;
     }
 }

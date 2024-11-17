@@ -82,12 +82,12 @@ const ThirdSection = () => {
             alt="Rescue Dog"
             className="dog-image"
           />
-        </motion.div>
-
-        <div className="text-container">
           <motion.h2 className="third-section-title" variants={fadeInVariant}>
             How to help?
           </motion.h2>
+        </motion.div>
+
+        <div className="text-container">
           <motion.p
             className="third-section-description"
             variants={fadeInVariant}
@@ -111,7 +111,15 @@ const ThirdSection = () => {
                 transition: "transform 0.3s ease",
               }}
             >
-              {[{ text: "Adopt", icon: "/images/ThirdSection/fox1.svg" }, { text: "Foster", icon: "/images/ThirdSection/home2.svg" }, { text: "Volunteer", icon: "/images/ThirdSection/food_volunteer.png" }, { text: "Donate", icon: "/images/ThirdSection/hand4.svg" }].map((btn, index) => (
+              {[
+                { text: "Adopt", icon: "/images/ThirdSection/fox1.svg" },
+                { text: "Foster", icon: "/images/ThirdSection/home2.svg" },
+                {
+                  text: "Volunteer",
+                  icon: "/images/ThirdSection/food_volunteer.png",
+                },
+                { text: "Donate", icon: "/images/ThirdSection/hand4.svg" },
+              ].map((btn, index) => (
                 <motion.button
                   key={index}
                   className={`help-button ${btn.text.toLowerCase()}`}
