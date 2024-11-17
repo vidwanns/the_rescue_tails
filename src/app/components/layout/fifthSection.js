@@ -158,24 +158,7 @@ const FifthSection = () => {
             className="bottom-image"
           />
         </div>
-        <div className="fiftSecMob-images">
-          {[
-            "nb-girl2.png",
-            "nb-girl3.png",
-            "nb-girl4.png",
-            "nb-girl5.png",
-            "nb-girl6.png",
-            "nb-girl1.png",
-          ].map((src, index) => (
-            <img
-              key={index}
-              ref={(el) => (imagesRef.current[index] = el)}
-              src={`/images/fifthSection/${src}`}
-              alt={`Contact Image ${index + 1}`}
-              className="fiftSecMobImg"
-            />
-          ))}
-        </div>
+  
       </div>
     </section>
   );
