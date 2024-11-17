@@ -74,11 +74,17 @@ function Footer() {
                     <span>hello@gmail.com</span>
                   </div>
                   <div className="social">
-                    <img
-                      src="/images/footer/x-icon-footer.png"
-                      alt="Social Icon"
-                      className="xicon"
-                    />
+                    <a
+                      href="https://x.com/therescuetails"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="/images/footer/x-icon-footer.png"
+                        alt="Social Icon"
+                        className="xicon"
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
