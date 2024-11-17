@@ -156,7 +156,7 @@
   margin-bottom: 20px;
   text-align: start;
   position:absolute;
-  left:523px;
+  left: 34%;
 }
 @media (max-width: 768px) {
   .third-section-title {
@@ -230,6 +230,8 @@
   letter-spacing: 1px;
   gap: 5px; /* Adjust spacing between text and icon */
   color: #F4B948; /* Adjust text color */
+  font-family: 'MO';
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -346,6 +348,7 @@
 .donation-title {
   font-size: 36px;
   color: white;
+  font-family: 'HV';
 }
 @media (max-width: 768px) {
   .donation-title {
