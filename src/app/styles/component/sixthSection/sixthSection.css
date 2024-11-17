@@ -75,13 +75,14 @@
 .left-text h4 {
     font-size: 16px;
     margin-bottom: 6px;
+    margin-left: 28%;
     font-family: 'HV';
     font-weight: lighter;
-    margin-left: 45px;
     color: #A9D886;
 }
 @media (max-width: 768px) {
 .left-text h4 {
+    font-family: 'HV';
     font-size: 11px;
     margin-left: 5px;
 }
@@ -90,7 +91,8 @@
 .left-text h1 {
     font-size: 50px;
     margin-bottom: 50px;
-    margin-left: 45px;
+    margin-left: 28%;
+    width: 100%;
     color: #A9D886;
     font-family: 'HV';
     font-weight: bold;
@@ -267,6 +269,7 @@
 }
 
 .input-field label {
+    font-family: 'MO';
     font-size: 14px;
     font-weight: bold;
     color: #444;
@@ -278,6 +281,7 @@
 .input-field textarea {
     padding: 16px;
     font-size: 14px;
+    font-family: 'MO';
     border-radius: 8px;
     border: 1.8px solid #444;
     background-color: #fff;
@@ -295,6 +299,7 @@
     border-radius: 30px;
     cursor: pointer;
     margin-top: 20px;
+    font-family: 'MO';
     font-size: 14px;
     font-weight: bold;
     width: 100%;
@@ -335,6 +340,7 @@
     gap: 40px;
     margin: 0;
     width: 100%;
+    font-family: 'mo';
 }
 @media (max-width: 768px) {
     .info-details {
@@ -365,6 +371,7 @@
 }
 
 .info-label {
+    font-family: 'mo';
     font-size: 16px;
     font-weight: bold;
     color: #fff;
