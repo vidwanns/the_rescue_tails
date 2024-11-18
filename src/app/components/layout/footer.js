@@ -65,11 +65,11 @@ function Footer() {
                 <div className="contactInfo">
                   <div className="email">
                     <img
-                      src="/images/footer/mail-icon.png"
+                      src="/images/footer/mail-icon.svg"
                       alt="Email Icon"
                       className="icon"
                     />
-                    <span>hello@gmail.com</span>
+                    <span>support@therescuetail.org</span>
                   </div>
                   <div className="social">
                     <a
