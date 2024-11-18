@@ -125,15 +125,14 @@ const SixthSection = () => {
                 <hr className="info-line" />
                 <div className="info-icon-text">
                   <img
-                    src="/images/sixthSection/phone-icon.svg"
+                    src="/images/sixthSection/mail-icon.svg"
                     alt="Phone Icon"
                     className="info-icon"
                   />
-                  <p className="info-label">Phone</p>
+                  <p className="info-label">Email</p>
                 </div>
                 <div className="info-text">
-                  <p>957234601</p>
-                  <p>957234601</p>
+                  <p>support@therescuetail.org</p>
                 </div>
               </div>
 
@@ -141,11 +140,11 @@ const SixthSection = () => {
                 <hr className="info-line" />
                 <div className="info-icon-text">
                   <img
-                    src="/images/sixthSection/adress-icon.svg"
+                    src="/images/sixthSection/icons8-x.svg"
                     alt="Address Icon"
                     className="info-icon"
                   />
-                  <p className="info-label">Address</p>
+                  <p className="info-label">Twitter</p>
                 </div>
                 <div className="info-text">
                   <p>Awwars and Manchester, Blu</p>

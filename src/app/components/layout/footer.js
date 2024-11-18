@@ -57,10 +57,8 @@ function Footer() {
 
               {/* Footer Contact */}
               <div className="footer-contact">
-                <p>Awwars and Manchester, Blu</p>
-                <p>Pincode-901503</p>
-                <p>+999999999999</p>
-                <p>hello@gmail.com</p>
+                <p>Email</p>
+                <p>support@therescuetail.org</p>
               </div>
               <div className="footerMobile">
                 <p>Contact on:-</p>
