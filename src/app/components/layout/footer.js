@@ -42,14 +42,27 @@ function Footer() {
               {/* Footer Links */}
               <div className="footer-links">
                 <ul className="links-column">
-                  <li>Home</li>
-                  <li>Adopt</li>
-                  <li>Volunteer</li>
+                  <li>
+                    <a href="#home">Home</a>
+                  </li>
+                  <li>
+                    <a href="#adopt">Adopt</a>
+                  </li>
+                  <li>
+                    <a href="#volunteer">Volunteer</a>
+                  </li>
                 </ul>
+
                 <ul className="links-column2">
-                  <li className="about">About Us</li>
-                  <li className="contacts">Contacts</li>
-                  <li>How to Help</li>
+                  <li>
+                    <a href="#about">About Us</a>
+                  </li>
+                  <li>
+                    <a href="#contacts">Contacts</a>
+                  </li>
+                  <li>
+                    <a href="#help">How to Help</a>
+                  </li>
                 </ul>
               </div>
 

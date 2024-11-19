@@ -52,7 +52,7 @@ const FirstSection = () => {
   }, [shuffledCreators]);
 
   return (
-    <section className="first-section">
+    <section id="home" className="first-section">
       {/* Left Icons */}
       <img
         src="/images/firstSection/pawLeft.svg"

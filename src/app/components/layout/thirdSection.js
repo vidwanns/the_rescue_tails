@@ -46,7 +46,7 @@ const ThirdSection = () => {
   });
 
   return (
-    <section className="third-section">
+    <section id="help" className="third-section">
       {/* Floating SVG Icons */}
       <motion.img
         src="/images/ThirdSection/whitePawRight.svg"
