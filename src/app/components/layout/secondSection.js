@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SecondSection = () => {
   useEffect(() => {
-    // Animate each span in .large-text similarly to text-content in FourthSection
+    // Animate each span in .large-text
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".main-title",
@@ -28,7 +28,7 @@ const SecondSection = () => {
   }, []);
 
   return (
-    <section className="second-section">
+    <section id="about" className="second-section">
       <div className="stats-container">
         <div className="stat-box">
           <img src="/images/secondSection/Icon akar-heart.svg" alt="Heart Icon" className="heart-icon" />
@@ -62,7 +62,7 @@ const SecondSection = () => {
         </div>
 
         <div className="main-title">
-        <img src="/images/secondSection/dogwomen.png" alt="Doggirl" className="dog-women-image" />
+          <img src="/images/secondSection/dogwomen.png" alt="Doggirl" className="dog-women-image" />
 
           <div className="large-text">
             <span className="image-box">

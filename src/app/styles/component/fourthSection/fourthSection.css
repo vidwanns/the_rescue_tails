@@ -17,11 +17,11 @@
 .vertical-text {
   position: absolute;
   left: 6%;
-  bottom: -10%;
+  bottom: -5%;
   margin: auto;
   transform: rotate(-90deg) translateY(-50%);
   transform-origin: left top;
-  font-size: 8rem;
+  font-size: 7.2rem;
   font-family: Arial, sans-serif;
   letter-spacing: 2px;
   z-index: 2;

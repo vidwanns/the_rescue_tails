@@ -24,7 +24,9 @@ const SixthSection = () => {
   }, []);
 
   return (
-    <section className="sixth-section">
+    <section id="volunteer" className="sixth-section">
+      <div id="community">
+      <div id="contact">
       <div className="outer-container">
         <div className="decorative-elements">
           <div className="left-text">
@@ -50,7 +52,8 @@ const SixthSection = () => {
             <h3>Say Hello!</h3>
             <p>
               Have questions, want to be volunteer or partner? We'd love to hear
-              from you! Contact us and we’ll get back to you as soon as possible.
+              from you! Contact us and we’ll get back to you as soon as
+              possible.
             </p>
 
             <form>
@@ -109,10 +112,17 @@ const SixthSection = () => {
 
           <div className="contact-info">
             <div className="contact-images">
-              {["image1.png", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg"].map((src, index) => (
+              {[
+                "image1.png",
+                "image2.jpg",
+                "image3.jpg",
+                "image4.jpg",
+                "image5.jpg",
+                "image6.jpg",
+              ].map((src, index) => (
                 <img
                   key={index}
-                  ref={(el) => imagesRef.current[index] = el}
+                  ref={(el) => (imagesRef.current[index] = el)}
                   src={`/images/sixthSection/${src}`}
                   alt={`Contact Image ${index + 1}`}
                   className="contact-image"
@@ -154,6 +164,8 @@ const SixthSection = () => {
             </div>
           </div>
         </div>
+      </div>
+      </div>
       </div>
     </section>
   );

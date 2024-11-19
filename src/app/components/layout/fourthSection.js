@@ -81,7 +81,7 @@ const FourthSection = () => {
   }, []);
 
   return (
-    <div className="fourth-section">
+    <div id="adopt" className="fourth-section">
       <div className="vertical-text">Journey to Home</div>
       <img src="/images/fourthSection/org-bone.svg" alt="top-right-icon" className="top-right-icon" />
       <img src="/images/fourthSection/ball.svg" alt="bottom-right-icon" className="bottom-right-icon" />
