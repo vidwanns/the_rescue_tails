@@ -1,65 +1,106 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import '../../styles/component/layout/nav.css';
+import "../../styles/component/layout/nav.css";
 
 const Nav = ({ isOpen, closeMenu }) => {
-  return (
-    <motion.div
-      className="custom-mobile-nav"
-      initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -100 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      style={{ display: isOpen ? "block" : "none" }}
-    >
-      <div className="header_logo_nav">
-        <img src="/images/header/logo.svg" alt="The Rescue Tails Logo" />
-      </div>
-      <div className="custom-close-icon" onClick={closeMenu}>
-  <span>&times;</span>
-</div>
+  // Variants for the menu container
+  const containerVariants = {
+    hidden: { opacity: 0, x: "100%" },
+    visible: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: "100%" },
+  };
 
-      <nav className="custom-nav-links">
-        <div className="custom-nav-link-wrapper">
-          <Link href="#home" passHref><div className="custom-nav-link">Home</div></Link>
-        </div>
-        <div className="custom-nav-link-wrapper">
-          <Link href="#about" passHref><div className="custom-nav-link">About Us</div></Link>
-        </div>
-        <div className="custom-nav-link-wrapper">
-          <Link href="#how-to-help" passHref><div className="custom-nav-link">How to Help</div></Link>
-        </div>
-        <div className="custom-nav-link-wrapper">
-          <Link href="#volunteer" passHref><div className="custom-nav-link">Volunteer</div></Link>
-        </div>
-        <div className="custom-nav-link-wrapper">
-          <Link href="#adopt" passHref><div className="custom-nav-link">Adopt</div></Link>
-        </div>
-        <div className="custom-nav-link-wrapper">
-          <Link href="#contacts" passHref><div className="custom-nav-link">Contacts</div></Link>
-        </div>
-        <div className="custom-nav-link-wrapper">
-          <Link href="#say-hello" passHref><div className="custom-nav-link">Say Hello!</div></Link>
-        </div>
-      </nav>
-      {/* <div className="custom-buttons">
-        <div className="custom-button custom-donate-button">
-          Donate
-          <img
-            src="/images/header/arrow-up-right.svg"
-            alt="Arrow Icon"
-            className="arrow-icon"
-          />
-        </div>
-        <div className="custom-button custom-community-button">
-          Contact
-          <img
-            src="/images/header/arrow-up-right.svg"
-            alt="Arrow Icon"
-            className="arrow-icon"
-          />
-        </div>
-      </div> */}
-    </motion.div>
+  // Variants for the links
+  const linkVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: index * 0.08, // Slightly staggered animation for smoother flow
+        duration: 0.5, // Longer duration for a smoother transition
+        ease: [0.42, 0, 0.58, 1], // Cubic bezier for a polished feel
+      },
+    }),
+    exit: {
+      opacity: 0,
+      y: 50,
+      transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1] },
+    },
+  };
+
+  // Animation for the logo and close button
+  const headerVariants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.42, 0, 0.58, 1],
+      },
+    },
+
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="custom-mobile-nav"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          transition={{ duration: 0.5, ease: [0.42, 0, 0.58, 1] }}
+        >
+          {/* Logo and Close Button */}
+          <motion.div
+            className="header_logo_nav"
+            variants={headerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <img src="/images/header/logo.svg" alt="The Rescue Tails Logo" />
+            <div className="custom-close-icon" onClick={closeMenu}>
+              <span>&times;</span>
+            </div>
+          </motion.div>
+
+          {/* Navigation Links */}
+          <nav className="custom-nav-links">
+            {[
+              "Home",
+              "About Us",
+              "How to Help",
+              "Volunteer",
+              "Adopt",
+              "Contacts",
+              "Say Hello!",
+            ].map((link, index) => (
+              <motion.div
+                key={link}
+                className="custom-nav-link-wrapper"
+                custom={index}
+                variants={linkVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                <Link
+                  href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  passHref
+                >
+                  <div onClick={closeMenu} className="custom-nav-link">
+                    {link}
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
