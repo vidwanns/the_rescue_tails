@@ -59,6 +59,8 @@
   flex-direction: column;
   gap: 15px;
   align-items: center;
+    margin-top: 80px; /* Offset text by 20px from the right */
+
 }
 
 .custom-nav-link-wrapper {
