@@ -39,7 +39,18 @@ const Nav = ({ isOpen, closeMenu }) => {
         ease: [0.42, 0, 0.58, 1],
       },
     },
+  };
 
+  // Function to smoothly scroll to the About section
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      closeMenu(); // Close the mobile menu after clicking
+    }
   };
 
   return (
@@ -71,7 +82,7 @@ const Nav = ({ isOpen, closeMenu }) => {
           <nav className="custom-nav-links">
             {[
               "Home",
-              "About Us",
+              "About Us",  // Link this to second section
               "How to Help",
               "Volunteer",
               "Adopt",
@@ -88,10 +99,13 @@ const Nav = ({ isOpen, closeMenu }) => {
                 exit="exit"
               >
                 <Link
-                  href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={link === "About Us" ? "#" : `#${link.toLowerCase().replace(/\s+/g, "-")}`}
                   passHref
                 >
-                  <div onClick={closeMenu} className="custom-nav-link">
+                  <div 
+                    onClick={link === "About Us" ? scrollToAbout : closeMenu} 
+                    className="custom-nav-link"
+                  >
                     {link}
                   </div>
                 </Link>
