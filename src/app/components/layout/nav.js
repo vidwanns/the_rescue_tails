@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
 import "../../styles/component/layout/nav.css";
 
 const Nav = ({ isOpen, closeMenu }) => {
@@ -42,10 +43,11 @@ const Nav = ({ isOpen, closeMenu }) => {
   };
 
   // Function to smoothly scroll to the About section
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault(); // Prevent default behavior for anchor tag
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -73,7 +75,10 @@ const Nav = ({ isOpen, closeMenu }) => {
             exit="exit"
           >
             <img src="/images/header/logo.svg" alt="The Rescue Tails Logo" />
-            <div className="custom-close-icon" onClick={closeMenu}>
+            <div
+              className="custom-close-icon"
+              onClick={closeMenu} // Only close the menu when clicking the close icon
+            >
               <span>&times;</span>
             </div>
           </motion.div>
@@ -82,8 +87,8 @@ const Nav = ({ isOpen, closeMenu }) => {
           <nav className="custom-nav-links">
             {[
               "Home",
-              "About Us",  // Link this to second section
-              "How to Help",
+              "About Us", // Link this to second section
+              "How to Help", // Link this to third section
               "Volunteer",
               "Adopt",
               "Contacts",
@@ -99,11 +104,17 @@ const Nav = ({ isOpen, closeMenu }) => {
                 exit="exit"
               >
                 <Link
-                  href={link === "About Us" ? "#" : `#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={link === "About Us" ? "#" : link === "How to Help" ? "#" : `#${link.toLowerCase().replace(/\s+/g, "-")}`}
                   passHref
                 >
-                  <div 
-                    onClick={link === "About Us" ? scrollToAbout : closeMenu} 
+                  <div
+                    onClick={(e) =>
+                      link === "About Us"
+                        ? scrollToSection(e, "about")
+                        : link === "How to Help"
+                        ? scrollToSection(e, "how-to-help")
+                        : closeMenu()
+                    }
                     className="custom-nav-link"
                   >
                     {link}
