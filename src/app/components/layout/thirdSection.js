@@ -1,13 +1,12 @@
 import dynamic from "next/dynamic";
-
-// Dynamically import the Lottie component to run only on the client-side
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import pet from "../../../../public/jai_ho.json";
 import "../../styles/component/thirdSection/thirdSection.css";
+
+// Dynamically import the Lottie component to run only on the client-side
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const ThirdSection = () => {
   const [translateX, setTranslateX] = useState(0);
@@ -46,7 +45,7 @@ const ThirdSection = () => {
   });
 
   return (
-    <section id="help" className="third-section">
+    <section id="how-to-help" className="third-section">
       <motion.img
         src="/images/ThirdSection/whitePawRight.svg"
         alt="Paw Icon"

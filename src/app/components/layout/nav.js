@@ -91,8 +91,8 @@ const Nav = ({ isOpen, closeMenu }) => {
               "How to Help", // Link this to third section
               "Volunteer",
               "Adopt",
-              "Contacts",
-              "Say Hello!",
+              "Contacts", // Link this to the contact section
+              "Say Hello!", // Link this to say hello section
             ].map((link, index) => (
               <motion.div
                 key={link}
@@ -104,7 +104,17 @@ const Nav = ({ isOpen, closeMenu }) => {
                 exit="exit"
               >
                 <Link
-                  href={link === "About Us" ? "#" : link === "How to Help" ? "#" : `#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={
+                    link === "About Us"
+                      ? "#about"
+                      : link === "How to Help"
+                      ? "#how-to-help"
+                      : link === "Contacts"
+                      ? "#contact"
+                      : link === "Say Hello!"
+                      ? "#say-hello"
+                      : `#${link.toLowerCase().replace(/\s+/g, "-")}`
+                  }
                   passHref
                 >
                   <div
@@ -113,6 +123,10 @@ const Nav = ({ isOpen, closeMenu }) => {
                         ? scrollToSection(e, "about")
                         : link === "How to Help"
                         ? scrollToSection(e, "how-to-help")
+                        : link === "Contacts"
+                        ? scrollToSection(e, "contact")
+                        : link === "Say Hello!"
+                        ? scrollToSection(e, "say-hello")
                         : closeMenu()
                     }
                     className="custom-nav-link"
