@@ -157,8 +157,8 @@ const SixthSection = () => {
                   <p className="info-label">Twitter</p>
                 </div>
                 <div className="info-text">
-                  <p>Awwars and Manchester, Blu</p>
-                  <p>Pincode-901503</p>
+                  {/* <p>Awwars and Manchester, Blu</p>
+                  <p>Pincode-901503</p> */}
                 </div>
               </div>
             </div>

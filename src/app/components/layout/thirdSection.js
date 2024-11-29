@@ -1,26 +1,27 @@
-"use client";
+import dynamic from "next/dynamic";
+
+// Dynamically import the Lottie component to run only on the client-side
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
 import { useSwipeable } from "react-swipeable";
 import pet from "../../../../public/jai_ho.json";
 import "../../styles/component/thirdSection/thirdSection.css";
 
 const ThirdSection = () => {
   const [translateX, setTranslateX] = useState(0);
-  const [isMobile, setIsMobile] = useState(false); // Initialize without `window.innerWidth`
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Update mobile state on resize
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-
-    // Set initial state in useEffect to ensure `window` is available
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      const handleResize = () => setIsMobile(window.innerWidth <= 768);
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
-  // Framer Motion Variants
   const floatVariant = {
     animate: {
       y: [0, -10, 0],
@@ -37,7 +38,6 @@ const ThirdSection = () => {
     },
   };
 
-  // Configure swipe handlers for mobile screens only
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => setTranslateX((prev) => Math.max(prev - 100, -200)),
     onSwipedRight: () => setTranslateX((prev) => Math.min(prev + 100, 0)),
@@ -47,7 +47,6 @@ const ThirdSection = () => {
 
   return (
     <section id="help" className="third-section">
-      {/* Floating SVG Icons */}
       <motion.img
         src="/images/ThirdSection/whitePawRight.svg"
         alt="Paw Icon"
@@ -111,21 +110,16 @@ const ThirdSection = () => {
                 transition: "transform 0.3s ease",
               }}
             >
-              {[
+              {[ 
                 { text: "Adopt", icon: "/images/ThirdSection/fox1.svg" },
                 { text: "Foster", icon: "/images/ThirdSection/home2.svg" },
-                {
-                  text: "Volunteer",
-                  icon: "/images/ThirdSection/food_volunteer.png",
-                },
+                { text: "Volunteer", icon: "/images/ThirdSection/food_volunteer.png" },
                 { text: "Donate", icon: "/images/ThirdSection/hand4.svg" },
               ].map((btn, index) => (
                 <motion.button
                   key={index}
                   className={`help-button ${btn.text.toLowerCase()}`}
-                  whileHover={{
-                    scale: 1,
-                  }}
+                  whileHover={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   <img
@@ -158,7 +152,6 @@ const ThirdSection = () => {
         </div>
       </motion.div>
 
-      {/* Lottie Animation Container */}
       <motion.div
         className="donation-graphic-container"
         variants={fadeInVariant}
