@@ -1,4 +1,3 @@
-// page.js
 "use client";
 
 import Header from "./components/layout/header";
