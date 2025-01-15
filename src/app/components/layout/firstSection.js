@@ -1,9 +1,9 @@
-"use client"; // Ensures this is a client-side component for Next.js
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { motion } from "framer-motion";
 import "../../styles/component/firstSection/firstSection.css";
-import gsap from 'gsap';
+import gsap from "gsap";
 
 const creatorsData = [
   { name: "img_1" },
@@ -11,7 +11,7 @@ const creatorsData = [
   { name: "img_3" },
   { name: "img_4" },
   { name: "img_5" },
-  { name: "img_6" }
+  { name: "img_6" },
 ];
 
 const shuffleArray = (array) => {
@@ -28,9 +28,8 @@ const FirstSection = () => {
   const [shuffledCreators, setShuffledCreators] = useState([]);
   const cardsRef = useRef(null);
 
-  // Shuffle the creatorsData array on component mount
   useEffect(() => {
-    const shuffledData = shuffleArray([...creatorsData]); // Create a shuffled copy of the array
+    const shuffledData = shuffleArray([...creatorsData]);
     setShuffledCreators(shuffledData);
   }, []);
 
@@ -41,15 +40,38 @@ const FirstSection = () => {
     const totalWidth = cardsContainer.scrollWidth;
 
     gsap.to(cardsContainer, {
-      x: -totalWidth / 2, // Scroll halfway, then repeat
-      duration: 50, // Increase duration for a smoother scroll
-      repeat: -1, // Infinite loop
-      ease: "linear", // Smooth linear scroll
+      x: -totalWidth / 2,
+      duration: 50,
+      repeat: -1,
+      ease: "linear",
       modifiers: {
         x: gsap.utils.unitize((x) => parseFloat(x) % (totalWidth / 2)), // Smooth transition back to start
       },
     });
   }, [shuffledCreators]);
+
+  useEffect(() => {
+    // Add Google Tag script dynamically
+    const gtagScript = document.createElement("script");
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HQDPLG656Q";
+    gtagScript.async = true;
+    document.head.appendChild(gtagScript);
+
+    const inlineScript = document.createElement("script");
+    inlineScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-HQDPLG656Q');
+    `;
+    document.head.appendChild(inlineScript);
+
+    return () => {
+      // Cleanup: remove scripts when component unmounts
+      document.head.removeChild(gtagScript);
+      document.head.removeChild(inlineScript);
+    };
+  }, []);
 
   return (
     <section id="home" className="first-section">
@@ -97,7 +119,7 @@ const FirstSection = () => {
                 />
               </div>
             ))}
-                {shuffledCreators.map((creator, index) => (
+            {shuffledCreators.map((creator, index) => (
               <div key={`duplicate-${index}`} className="cardContainer">
                 <img
                   src={getImageSrc(creator.name)}
@@ -120,9 +142,7 @@ const FirstSection = () => {
           </div>
           <div className="donate-button-wrapper">
             {/* Framer Motion for Donate Button */}
-            <motion.button className="donate-button">
-              Donate
-            </motion.button>
+            <motion.button className="donate-button">Donate</motion.button>
           </div>
         </div>
       </div>
