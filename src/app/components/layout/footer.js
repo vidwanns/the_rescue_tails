@@ -20,6 +20,29 @@ function Footer() {
     console.log("Donate button clicked");
   };
 
+  useEffect(() => {
+    // Add Google Tag script dynamically
+    const gtagScript = document.createElement("script");
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HQDPLG656Q";
+    gtagScript.async = true;
+    document.head.appendChild(gtagScript);
+
+    const inlineScript = document.createElement("script");
+    inlineScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-HQDPLG656Q');
+    `;
+    document.head.appendChild(inlineScript);
+
+    return () => {
+      // Cleanup: remove scripts when component unmounts
+      document.head.removeChild(gtagScript);
+      document.head.removeChild(inlineScript);
+    };
+  }, []);
+
   return (
     <footer id="site-footer" className="footer">
       <div className="outer-container-footer">

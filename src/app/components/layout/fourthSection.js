@@ -80,6 +80,29 @@ const FourthSection = () => {
     );
   }, []);
 
+  useEffect(() => {
+    // Add Google Tag script dynamically
+    const gtagScript = document.createElement("script");
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-HQDPLG656Q";
+    gtagScript.async = true;
+    document.head.appendChild(gtagScript);
+
+    const inlineScript = document.createElement("script");
+    inlineScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-HQDPLG656Q');
+    `;
+    document.head.appendChild(inlineScript);
+
+    return () => {
+      // Cleanup: remove scripts when component unmounts
+      document.head.removeChild(gtagScript);
+      document.head.removeChild(inlineScript);
+    };
+  }, []);
+
   return (
     <div id="adopt" className="fourth-section">
       <div className="vertical-text">Journey to Home</div>
